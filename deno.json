@@ -1,6 +1,8 @@
 {
   "imports": {
-    "deco-sites/boilerplaten1/": "./",
+    "deco-sites/perfeitalojan1/": "./",
+
+    "deco-sites/perfeitalojan1/": "./",
     "deco-sites/fashion/": "./",
     "$store/": "./",
     "deco-sites/std/": "https://denopkg.com/deco-sites/std@1.22.11/",
@@ -26,7 +28,7 @@
     "check": "deno fmt && deno lint && deno check dev.ts main.ts",
     "install": "deno eval 'import \"deco/scripts/apps/install.ts\"'",
     "uninstall": "deno eval 'import \"deco/scripts/apps/uninstall.ts\"'",
-    "bundle": "deno eval 'import \"deco/scripts/apps/bundle.ts\"' deco-sites/boilerplaten1",
+    "bundle": "deno eval 'import \"deco/scripts/apps/bundle.ts\"' deco-sites/perfeitalojan1",
     "build": "deno run -A dev.ts build",
     "preview": "deno run -A main.ts"
   },
