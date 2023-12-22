@@ -19,6 +19,9 @@ import { getShareLink } from "$store/sdk/shareLinks.tsx";
 import DiscountBadge from "./DiscountBadge.tsx";
 import ProductSelector from "./ProductVariantSelector.tsx";
 
+import AddToCartButton from "$store/components/product/AddToCartButton.tsx";
+import ProductButtonFloatingText from "$store/components/ui/ProductButtonFloatingText.tsx";
+
 export type Variant = "front-back" | "slider" | "auto";
 
 export type ShareableNetwork = "Facebook" | "Twitter" | "Email" | "WhatsApp";
@@ -34,7 +37,7 @@ export interface Props {
     label: string;
     link: string;
   };
-  shareableNetworks?: ShareableNetwork[];
+  shareableNetworks?: ShareableNetwork[]; 
 }
 
 const WIDTH = 500;
@@ -61,7 +64,7 @@ function ProductInfo(
   { page, shipmentPolitics, shareableNetworks }: {
     page: ProductDetailsPage;
     shipmentPolitics?: Props["shipmentPolitics"];
-    shareableNetworks?: Props["shareableNetworks"];
+    shareableNetworks?: Props["shareableNetworks"]; 
   },
 ) {
   const {
@@ -82,8 +85,42 @@ function ProductInfo(
   );
 
   return (
-    <>
-      {/* Code and name */}
+    <>     
+      <div class="floating bg-[#2F1893] w-full h-[80px] fixed left-0 top-[80px] z-20 container-floating is-hidden">
+        <div class="floating__container grid grid-cols-9 grid-rows-none h-full items-center max-w-[80%] item-floating my-0 mx-auto">
+          <ProductButtonFloatingText product={product} />
+          <div class="floating__price col-[5/7] flex flex-col text-right">
+            <span class="text-white">
+              Por: {formatPrice(price, offers!.priceCurrency!)}
+            </span>
+            <span class="text-white text-xs">
+              ou {installments}
+            </span>            
+          </div>    
+          <div class="floating__button mt-0 flex flex-col gap-4 col-[8/10]">
+            {availability === "https://schema.org/InStock"
+              ? (
+                <>
+                  {seller && (
+                    <AddToCartButton 
+                      skuId={productID}
+                      sellerId={seller}
+                      price={price ?? 0}
+                      discount={price && listPrice ? listPrice - price : 0}
+                      name={name ?? ""}
+                      productGroupId={product.isVariantOf?.productGroupID ?? ""}
+                      quantity={1}
+                      classes="btn-primary btn-block transition-all max-w-sm hover:text-neutral-100 font-medium text-secondary-focus h-10"
+                    /> 
+                  )}
+                </>
+              )
+              : <OutOfStock productID={productID} />
+            }
+          </div>                
+        </div>
+      </div>
+
       <div class="mt-4 sm:mt-0">
         <h1>
           <span class="font-medium text-base-content text-2xl">

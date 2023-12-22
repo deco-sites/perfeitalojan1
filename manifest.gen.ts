@@ -57,7 +57,8 @@ const manifest = {
     "deco-sites/perfeitalojan1/sections/Content/InfoCard.tsx": $$$$$$8,
     "deco-sites/perfeitalojan1/sections/Content/Logos.tsx": $$$$$$9,
     "deco-sites/perfeitalojan1/sections/Content/Testimonials.tsx": $$$$$$10,
-    "deco-sites/perfeitalojan1/sections/DesignSystem/DesignSystem.tsx": $$$$$$11,
+    "deco-sites/perfeitalojan1/sections/DesignSystem/DesignSystem.tsx":
+      $$$$$$11,
     "deco-sites/perfeitalojan1/sections/Footer/Footer.tsx": $$$$$$12,
     "deco-sites/perfeitalojan1/sections/Header/HeaderLayout.tsx": $$$$$$13,
     "deco-sites/perfeitalojan1/sections/Header/TopNavBar.tsx": $$$$$$14,
@@ -70,10 +71,12 @@ const manifest = {
     "deco-sites/perfeitalojan1/sections/Institutional/AsideMenu.tsx": $$$$$$20,
     "deco-sites/perfeitalojan1/sections/Institutional/CardsContent.tsx":
       $$$$$$21,
-    "deco-sites/perfeitalojan1/sections/Institutional/ContactForm.tsx": $$$$$$22,
+    "deco-sites/perfeitalojan1/sections/Institutional/ContactForm.tsx":
+      $$$$$$22,
     "deco-sites/perfeitalojan1/sections/Institutional/InstitutionalPage.tsx":
       $$$$$$23,
-    "deco-sites/perfeitalojan1/sections/Institutional/TextContent.tsx": $$$$$$24,
+    "deco-sites/perfeitalojan1/sections/Institutional/TextContent.tsx":
+      $$$$$$24,
     "deco-sites/perfeitalojan1/sections/Links/LinkTree.tsx": $$$$$$25,
     "deco-sites/perfeitalojan1/sections/Links/Shortcuts.tsx": $$$$$$26,
     "deco-sites/perfeitalojan1/sections/Miscellaneous/CampaignTimer.tsx":

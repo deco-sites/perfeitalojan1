@@ -53,7 +53,7 @@ function Container({ sections }: Props) {
         >
           {withContainer
             ? (
-              <div class="container w-full m-auto px-5">
+              <div class="container w-full m-auto px-5 is-header">
                 <Component {...props} />
               </div>
             )

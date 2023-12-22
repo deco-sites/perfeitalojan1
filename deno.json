@@ -20,7 +20,7 @@
     "apps/": "https://denopkg.com/deco-cx/apps@0.23.4/"
   },
   "tasks": {
-    "start": "deno task bundle && DECO_SITE_NAME=boilerplaten1 deno run -A --unstable --watch=static/sw.js,tailwind.css,sections/,functions/,loaders/,actions/,workflows/,accounts/ dev.ts",
+    "start": "deno task bundle && DECO_SITE_NAME=perfeitalojan1 deno run -A --unstable --watch=static/sw.js,tailwind.css,sections/,functions/,loaders/,actions/,workflows/,accounts/ dev.ts",
     "gen": "deno run -A dev.ts --gen-only",
     "component": "deno eval 'import \"deco/scripts/component.ts\"'",
     "release": "deno eval 'import \"deco/scripts/release.ts\"'",
