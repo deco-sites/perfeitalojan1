@@ -70,6 +70,42 @@
     background-color: #fbfbfb !important;
     box-shadow: 0 0px 0px -1px #cacaca, 0 3px 5px -2px #cacaca;
   }
+
+  @media(max-width:767px){
+    .floating{
+      top: 62px !important;
+    }
+
+    .floating__container{
+      max-width: 95% !important;
+    }
+
+    .floating__text span{
+      text-overflow: ellipsis;
+      overflow: hidden;
+      display: block;
+      font-size: 12px;
+      white-space: nowrap;
+      max-width: 90%;      
+    }
+
+    .floating__price{
+      grid-column: 5/8 !important;
+      margin-right: 20px !important;      
+    }
+
+    .floating__price > *{
+      font-size: 12px !important;
+    }
+
+    .floating__button{
+      font-size: 12px !important;
+    }
+
+    .floating__button svg {
+      display: none !important;
+    }
+  }
 }
 
 
