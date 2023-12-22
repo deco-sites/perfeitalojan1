@@ -28,7 +28,7 @@ function NavItemDropDown({ elements }: { elements?: INavItem[] }) {
 
   return (
     <div
-      class="absolute hidden hover:flex group-hover:flex bg-base-100 z-50 items-start justify-center gap-6 w-screen bg-opacity-90"
+      class="absolute hidden hover:flex group-hover:flex bg-base-100 z-50 items-start justify-center gap-6 w-screen bg-opacity-90 is-navItem"
       style={{ top: "0px", left: "0px", marginTop: headerHeight }}
     >
       <div class="max-w-5xl w-full pt-14 pb-12 m-auto px-5 flex items-start justify-start gap-16">
