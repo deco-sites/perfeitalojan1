@@ -3,13 +3,14 @@ import SearchControls from "$store/islands/SearchControls.tsx";
 import { SendEventOnLoad } from "$store/sdk/analytics.tsx";
 import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
 import { useOffer } from "$store/sdk/useOffer.ts";
-import ProductGallery, { Columns } from "../product/ProductGallery.tsx";
+import ProductGallery from "../product/ProductGallery.tsx";
 import type { LoaderReturnType } from "$live/types.ts";
 import type { ProductListingPage } from "apps/commerce/types.ts";
 import Sort from "$store/islands/Sort.tsx";
 import Breadcrumb from "$store/components/ui/Breadcrumb.tsx";
 import SearchPagination from "$store/components/search/SearchPagination.tsx";
 import { Section } from "$live/blocks/section.ts";
+import SearchResultsGridChoice from "$store/islands/SearchResultsGridChoice.tsx";
 
 export interface Props {
   page: LoaderReturnType<ProductListingPage | null>;
@@ -17,10 +18,6 @@ export interface Props {
    * @description Use drawer for mobile like behavior on desktop. Aside for rendering the filters alongside the products
    */
   variant?: "aside" | "drawer";
-  /**
-   * @description Number of products per line on grid
-   */
-  columns: Columns;
   /**
    * @description Not found section, displayed when no products are found
    */
@@ -71,9 +68,11 @@ function Result({
                   </label>
                 )
                 : null}
+              <SearchResultsGridChoice variant="desktop" />              
             </div>
-            <div class="lg:hidden">
+            <div class="lg:hidden column-selector relative">
               {productsFound}
+              <SearchResultsGridChoice variant="mobile" />
             </div>
             <div class="flex-grow">
               <ProductGallery products={products} />

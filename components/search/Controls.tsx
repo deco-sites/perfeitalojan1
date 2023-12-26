@@ -6,7 +6,6 @@ import Icon from "$store/components/ui/Icon.tsx";
 import Modal from "$store/components/ui/Modal.tsx";
 import { useSignal } from "@preact/signals";
 import type { ProductListingPage } from "apps/commerce/types.ts";
-
 type Props =
   & Pick<
     ProductListingPage,
@@ -38,7 +37,7 @@ function SearchControls(
           strokeWidth={2}
           class="text-secondary-focus"
         />
-      </Button>
+      </Button>     
 
       <Modal
         showHeader
@@ -54,7 +53,7 @@ function SearchControls(
         <div class="p-8 py-2">
           <Filters filters={filters} />
         </div>
-      </Modal>
+      </Modal>    
     </>
   );
 }
