@@ -61,14 +61,16 @@ export interface Layout {
 }
 
 interface Props {
-  product: Product;
   /** Preload card image */
+  product: Product;
   preload?: boolean;
-
+  /**
+   * @description Flags, displayed when  products are found
+   */  
+  highlights?: HighLight[];  
   /** @description used for analytics event */
   itemListName?: string;
   layout?: Layout;
-  highlights?: HighLight[];
 }
 
 export const relative = (url: string) => {
