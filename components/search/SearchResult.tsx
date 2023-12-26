@@ -12,10 +12,11 @@ import SearchPagination from "$store/components/search/SearchPagination.tsx";
 import { Section } from "$live/blocks/section.ts";
 import SearchResultsGridChoice from "$store/islands/SearchResultsGridChoice.tsx";
 
-import { HighLight } from "$store/components/product/ProductHighlights.tsx";
+import type { HighLight } from "$store/components/product/ProductHighlights.tsx";
 
 export interface Props {
   page: LoaderReturnType<ProductListingPage | null>;
+  highlights?: HighLight[];  
   /**
    * @description Use drawer for mobile like behavior on desktop. Aside for rendering the filters alongside the products
    */
@@ -24,7 +25,6 @@ export interface Props {
    * @description Not found section, displayed when no products are found
    */
   notFoundSection: Section;
-  highlights?: HighLight[];
 }
 
 function Result({
