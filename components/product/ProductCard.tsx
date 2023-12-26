@@ -14,6 +14,9 @@ import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalytic
 import Image from "deco-sites/std/components/Image.tsx";
 import DiscountBadge from "./DiscountBadge.tsx";
 
+import ProductHighlights from "$store/components/product/ProductHighlights.tsx";
+import { HighLight } from "$store/components/product/ProductHighlights.tsx";
+
 export interface Layout {
   basics?: {
     contentAlignment?: "Left" | "Center";
@@ -65,6 +68,7 @@ interface Props {
   /** @description used for analytics event */
   itemListName?: string;
   layout?: Layout;
+  highlights?: HighLight[];
 }
 
 export const relative = (url: string) => {
@@ -75,7 +79,7 @@ export const relative = (url: string) => {
 const WIDTH = 279;
 const HEIGHT = 270;
 
-function ProductCard({ product, preload, itemListName, layout }: Props) {
+function ProductCard({ product, preload, itemListName, layout, highlights }: Props) {
   const {
     url,
     productID,
@@ -219,6 +223,11 @@ function ProductCard({ product, preload, itemListName, layout }: Props) {
               variant={l?.discount?.variant}
             />
           )}
+
+          {product && (
+            <ProductHighlights product={product} highlights={highlights} />
+          )}
+
           <Image
             src={front.url!}
             alt={front.alternateName}

@@ -12,6 +12,8 @@ import SearchPagination from "$store/components/search/SearchPagination.tsx";
 import { Section } from "$live/blocks/section.ts";
 import SearchResultsGridChoice from "$store/islands/SearchResultsGridChoice.tsx";
 
+import { HighLight } from "$store/components/product/ProductHighlights.tsx";
+
 export interface Props {
   page: LoaderReturnType<ProductListingPage | null>;
   /**
@@ -22,11 +24,13 @@ export interface Props {
    * @description Not found section, displayed when no products are found
    */
   notFoundSection: Section;
+  highlights?: HighLight[];
 }
 
 function Result({
   page,
   variant,
+  highlights
 }: Omit<Omit<Props, "page">, "notFoundSection"> & {
   page: ProductListingPage;
 }) {
@@ -75,7 +79,7 @@ function Result({
               <SearchResultsGridChoice variant="mobile" />
             </div>
             <div class="flex-grow">
-              <ProductGallery products={products} />
+              <ProductGallery products={products} highlights={highlights}/>
               <SearchPagination pageInfo={pageInfo} />
             </div>
           </div>

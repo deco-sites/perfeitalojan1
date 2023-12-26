@@ -23,6 +23,8 @@ import AddToCartButton from "$store/components/product/AddToCartButton.tsx";
 import ProductButtonFloatingText from "$store/components/ui/ProductButtonFloatingText.tsx";
 import ProductDetailsImages from "$store/components/product/ProductDetailsImage.tsx";
 
+import { HighLight } from "$store/components/product/ProductHighlights.tsx";
+
 export type Variant = "front-back" | "slider" | "auto";
 
 export type ShareableNetwork = "Facebook" | "Twitter" | "Email" | "WhatsApp";
@@ -39,6 +41,7 @@ export interface Props {
     link: string;
   };
   shareableNetworks?: ShareableNetwork[]; 
+  highlights?: HighLight[];
 }
 
 const WIDTH = 500;
@@ -315,11 +318,13 @@ function Details({
   variant,
   shipmentPolitics,
   shareableNetworks,
+  highlights
 }: {
   page: ProductDetailsPage;
   variant: Variant;
   shipmentPolitics?: Props["shipmentPolitics"];
   shareableNetworks?: Props["shareableNetworks"];
+  highlights?: HighLight[];
 }) {
   const { product, breadcrumbList } = page;
   const { offers } = product;
@@ -350,7 +355,7 @@ function Details({
             width={WIDTH}
             height={HEIGHT}
             aspect={ASPECT_RATIO}
-            product={product}
+            product={product}            
           />
 
           {/* Product Info */}
@@ -403,7 +408,7 @@ function Details({
 }
 
 function ProductDetails(
-  { page, variant: maybeVar = "auto", shipmentPolitics, shareableNetworks }:
+  { page, variant: maybeVar = "auto", shipmentPolitics, shareableNetworks, highlights, }:
     Props,
 ) {
   /**
@@ -426,6 +431,7 @@ function ProductDetails(
             variant={variant}
             shipmentPolitics={shipmentPolitics}
             shareableNetworks={shareableNetworks}
+            highlights={highlights}
           />
         )
         : <NotFound />}
