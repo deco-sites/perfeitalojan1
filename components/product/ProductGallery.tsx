@@ -1,31 +1,28 @@
 import { Product } from "apps/commerce/types.ts";
-
+import { computed } from "@preact/signals";
+import { gridColsSignal } from "$store/components/search/SearchResultsGridChoice.tsx";
 import ProductCard from "./ProductCard.tsx";
-
-export interface Columns {
-  mobile?: number;
-  desktop?: number;
-}
 
 export interface Props {
   products: Product[] | null;
 }
 
 function ProductGallery({ products }: Props) {
-  return (
-    <div class="grid grid-cols-1 gap-2 items-center sm:grid-cols-2 lg:grid-cols-3 lg:gap-[30px]">
-      {products?.map((product, index) => (
-        <ProductCard
-          product={product}
-          preload={index === 0}
-          layout={{
-            discount: { label: "OFF", variant: "emphasis" },
-            hide: { skuSelector: true, productDescription: true },
-            basics: { contentAlignment: "Center" },
-          }}
-        />
-      ))}
-    </div>
+  const gridCols = computed(() => gridColsSignal.value);  
+  return (  
+    <div class={`column-selector__container grid grid-cols-${gridCols.value.mobile} gap-2 items-center lg:grid-cols-${gridCols.value.desktop} lg:gap-[30px]`}>
+        {products?.map((product, index) => (
+          <ProductCard
+            product={product}
+            preload={index === 0}
+            layout={{
+              discount: { label: "OFF", variant: "emphasis" },
+              hide: { skuSelector: true, productDescription: true },
+              basics: { contentAlignment: "Center" },
+            }}
+          />
+        ))}
+    </div>   
   );
 }
 
