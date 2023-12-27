@@ -1,4 +1,3 @@
-
 import type { Props } from "deco-sites/perfeitalojan1/components/ui/HeroSection.tsx";
 import Button from "deco-sites/perfeitalojan1/components/ui/Button.tsx";
 import Icon from "deco-sites/perfeitalojan1/components/ui/Icon.tsx";
@@ -29,9 +28,9 @@ export default function HeroSectionCarroussel({
   const handleButtonAction = (callback: CallbackFunction) => {
     if (buttonDisabled) return;
     setButtonDisabled(true);
-  
+
     callback();
-  
+
     clearInterval(timeout);
     setTimeout(() => setButtonDisabled(false), 500);
   };
@@ -59,23 +58,23 @@ export default function HeroSectionCarroussel({
     }
   };
 
-  const timeout =
-    slider.interval && setInterval(nextBanner, slider.interval * 1000);
+  const timeout = slider.interval &&
+    setInterval(nextBanner, slider.interval * 1000);
   const inFocus = useSignal(0);
 
   return (
     <div
-      class={`relative ${isHeaderTransparent ? "" : "lg:mt-[99px] mt-[60px]"
-        }`}
+      class={`relative ${isHeaderTransparent ? "" : "lg:mt-[99px] mt-[60px]"}`}
     >
       <div class="flex flex-row overflow-auto scrollbar-none">
         {banner.map((ban, index) => (
           <div
             key={index}
-            class={`children:w-screen -ml-[calc(100vw*${index})] ${index === inFocus.value
+            class={`children:w-screen -ml-[calc(100vw*${index})] ${
+              index === inFocus.value
                 ? "opacity-100"
                 : "opacity-0 pointer-events-none"
-              } transition-all duration-500`}
+            } transition-all duration-500`}
             onClick={() => toBanner(index)}
           >
             <HeroSectionComponent {...ban} preload={index === 0} />
@@ -88,12 +87,14 @@ export default function HeroSectionCarroussel({
             {banner?.map((bann, index) => (
               <div
                 key={index}
-                class={`h-[3px] transition-all cursor-pointer ${inFocus.value === index
+                class={`h-[3px] transition-all cursor-pointer ${
+                  inFocus.value === index
                     ? "bg-primary w-[25px]"
                     : "bg-white w-[15px]"
-                  }`}
+                }`}
                 onClick={() => toBanner(index)}
-              ></div>
+              >
+              </div>
             ))}
           </div>
           <div class="absolute w-full left-0 top-[calc(50%-20px)]">

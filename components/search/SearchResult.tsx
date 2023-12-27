@@ -18,8 +18,8 @@ export interface Props {
   page: LoaderReturnType<ProductListingPage | null>;
   /**
    * @description Flags, displayed when  products are found
-   */    
-  highlights?: HighLight[];  
+   */
+  highlights?: HighLight[];
   /**
    * @description Use drawer for mobile like behavior on desktop. Aside for rendering the filters alongside the products
    */
@@ -33,7 +33,7 @@ export interface Props {
 function Result({
   page,
   variant,
-  highlights
+  highlights,
 }: Omit<Omit<Props, "page">, "notFoundSection"> & {
   page: ProductListingPage;
 }) {
@@ -75,14 +75,14 @@ function Result({
                   </label>
                 )
                 : null}
-              <SearchResultsGridChoice variant="desktop" />              
+              <SearchResultsGridChoice variant="desktop" />
             </div>
             <div class="lg:hidden column-selector relative">
               {productsFound}
               <SearchResultsGridChoice variant="mobile" />
             </div>
             <div class="flex-grow">
-              <ProductGallery products={products} highlights={highlights}/>
+              <ProductGallery products={products} highlights={highlights} />
               <SearchPagination pageInfo={pageInfo} />
             </div>
           </div>

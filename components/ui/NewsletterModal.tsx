@@ -4,10 +4,14 @@ import {
   ButtonVariant,
 } from "$store/components/minicart/Cart.tsx";
 import Icon from "$store/components/ui/Icon.tsx";
-import { invoke } from "$store/runtime.ts";
+import { Runtime } from "$store/runtime.ts";
 import { useSignal } from "@preact/signals";
 import type { JSX } from "preact";
 import { useEffect, useRef } from "preact/compat";
+import { getCookies } from "std/http/mod.ts";
+const subscribe = Runtime.create(
+  "deco-sites/std/actions/vtex/newsletter/subscribe.ts",
+);
 
 export interface INewsletterInputProps {
   /**
@@ -66,6 +70,14 @@ interface InputNewletterProps {
   required: boolean;
 }
 
+const loader = (props: Props, req: Request) => {
+  const cookies = getCookies(req.headers);
+  const cookieEmpty = req.method === "POST";
+  const isOpen = cookieEmpty ? false : Boolean(!cookies["DecoNewsletterModal"]);
+
+  return { ...props, isOpen };
+};
+
 function InputNewsletter(
   { name, placeholder, required, type }: InputNewletterProps,
 ) {
@@ -87,7 +99,9 @@ function NewsletterModal(
     text,
     modalSignExpiredDate,
     modalCloseExpiredDate,
-  }: Props & { isOpen: boolean },
+  }: SectionProps<
+    ReturnType<typeof loader>
+  >,
 ) {
   const modalRef = useRef<HTMLDialogElement>(null);
   const loading = useSignal(false);
@@ -110,13 +124,12 @@ function NewsletterModal(
 
       let name = "";
 
-      //todo: resolver erro do name
       if (form?.name?.show) {
         name = (e.currentTarget.elements.namedItem("name") as RadioNodeList)
           ?.value;
       }
 
-      await invoke.vtex.actions.newsletter.subscribe({ email, name });
+      await subscribe({ email, name });
     } finally {
       loading.value = false;
       success.value = true;
@@ -202,8 +215,8 @@ function NewsletterModal(
                 <Icon
                   class="mx-auto mb-5 block"
                   id="Logo"
-                  width={120}
-                  height={27}
+                  width={236}
+                  height={47}
                 />
                 <div
                   dangerouslySetInnerHTML={{ __html: text }}
@@ -243,7 +256,6 @@ function NewsletterModal(
           </button>
         </form>
       </dialog>
-      )
     </>
   );
 }

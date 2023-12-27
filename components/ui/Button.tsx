@@ -44,7 +44,7 @@ const variants = {
     "p-[10px] w-[150px] rounded-[50px] border-0 inline-block font-bold bg-primary text-white text-[16px] transition-all duration-300 hover:bg-primary focus:outline-none outline-none",
   assista:
     "p-[10px] w-[160px] lg:w-[200px] h-[40px] rounded-[50px] border-0 inline-block font-bold bg-primary text-white text-[12px] lg:text-[14px] tracking-[0.7px] transition-all duration-300 hover:scale-110 hover:bg-primary focus:outline-none outline-none",
-};  
+};
 
 const Button = forwardRef<HTMLButtonElement, Props>(({
   variant = "primary",
@@ -57,7 +57,9 @@ const Button = forwardRef<HTMLButtonElement, Props>(({
   iconId,
   ...props
 }, ref) => {
-  const Component = as as ComponentType<{ disabled?: boolean; className: string; type: string }>;
+  const Component = as as ComponentType<
+    { disabled?: boolean; className: string; type: string }
+  >;
   const styles = variants[variant];
 
   return (
@@ -71,7 +73,7 @@ const Button = forwardRef<HTMLButtonElement, Props>(({
       {loading === true ? <Spinner size={24} /> : children}
     </Component>
   );
-});;
+});
 
 // }, ref) => (
 //   <button

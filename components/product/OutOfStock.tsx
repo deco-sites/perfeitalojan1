@@ -1,5 +1,5 @@
 import { useSignal } from "@preact/signals";
-import { invoke } from "$store/runtime.ts";
+import { Runtime } from "$store/runtime.ts";
 import type { Product } from "apps/commerce/types.ts";
 import type { JSX } from "preact";
 import Button from "$store/components/ui/Button.tsx";
@@ -7,6 +7,8 @@ import Button from "$store/components/ui/Button.tsx";
 interface Props {
   productID: Product["productID"];
 }
+
+const notifyme = Runtime.create("deco-sites/std/actions/vtex/notifyme.ts");
 
 function Notify({ productID }: Props) {
   const loading = useSignal(false);
@@ -22,7 +24,7 @@ function Notify({ productID }: Props) {
       const email =
         (e.currentTarget.elements.namedItem("email") as RadioNodeList)?.value;
 
-      await invoke.vtex.actions.notifyme({ skuId: productID, name, email });
+      await notifyme({ skuId: productID, name, email });
     } finally {
       loading.value = false;
     }
@@ -59,7 +61,6 @@ function Notify({ productID }: Props) {
       <Button
         type="submit"
         class="btn-secondary font-medium h-[2.25rem] disabled:loading"
-        disabled={loading}
       >
         Avise-me
       </Button>

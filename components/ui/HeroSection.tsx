@@ -1,10 +1,9 @@
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 import type { Video as LiveVideo } from "deco-sites/std/components/types.ts";
 import Video from "apps/website/components/Video.tsx";
-import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
+import { Picture, Source } from "apps/website/components/Picture.tsx";
 import type { HTML } from "deco-sites/std/components/types.ts";
 import useMedia from "../../sdk/useMedia.ts";
-
 
 export interface VideoProps {
   /**
@@ -114,8 +113,6 @@ function BannerComponent(
   );
 }
 
-
-
 function VideoComponent({ media }: { media: VideoProps }) {
   const isMobile = useMedia("(max-width: 767px)", true);
   const videoSource = isMobile ? media.videoMobile : media.videoDesktop;
@@ -123,21 +120,23 @@ function VideoComponent({ media }: { media: VideoProps }) {
   return (
     <>
       <div class="block">
-        {videoSource ? (
-          <Video
-            src={videoSource}
-            width={150}
-            height={150}
-            class="w-full h-auto"
-            loop
-            muted
-            autoPlay
-            playsInline
-            loading={"eager"}
-          >
-            <source src={videoSource} type="video/mp4" />
-          </Video>
-        ) : null}
+        {videoSource
+          ? (
+            <Video
+              src={videoSource}
+              width={150}
+              height={150}
+              class="w-full h-auto"
+              loop
+              muted
+              autoPlay
+              playsInline
+              loading={"eager"}
+            >
+              <source src={videoSource} type="video/mp4" />
+            </Video>
+          )
+          : null}
       </div>
     </>
   );

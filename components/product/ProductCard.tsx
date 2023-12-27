@@ -11,7 +11,7 @@ import { useOffer } from "$store/sdk/useOffer.ts";
 import { useVariantPossibilities } from "$store/sdk/useVariantPossiblities.ts";
 import type { Product } from "apps/commerce/types.ts";
 import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
-import Image from "deco-sites/std/components/Image.tsx";
+import Image from "apps/website/components/Image.tsx";
 import DiscountBadge from "./DiscountBadge.tsx";
 
 import ProductHighlights from "$store/components/product/ProductHighlights.tsx";
@@ -66,8 +66,8 @@ export interface Props {
   preload?: boolean;
   /**
    * @description Flags, displayed when  products are found
-   */  
-  highlights?: HighLight[];  
+   */
+  highlights?: HighLight[];
   /** @description used for analytics event */
   itemListName?: string;
   layout?: Layout;
@@ -81,7 +81,9 @@ export const relative = (url: string) => {
 const WIDTH = 279;
 const HEIGHT = 270;
 
-function ProductCard({ product, preload, itemListName, layout, highlights }: Props) {
+function ProductCard(
+  { product, preload, itemListName, layout, highlights }: Props,
+) {
   const {
     url,
     productID,

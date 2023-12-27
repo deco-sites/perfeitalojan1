@@ -41,7 +41,7 @@ export default {
             "--dot-progress": "100%",
           },
         },
-      },     
+      },
     },
     screens: {
       sm: "640px",
@@ -51,6 +51,6 @@ export default {
       xll: "1536px",
       "2xl": "2000px",
       "15xl": "1720px",
-    },      
+    },
   },
 };
