@@ -60,7 +60,7 @@ export interface Layout {
   };
 }
 
-interface Props {
+export interface Props {
   /** Preload card image */
   product: Product;
   preload?: boolean;
