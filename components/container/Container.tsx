@@ -1,4 +1,4 @@
-import { Section } from "$live/blocks/section.ts";
+import { Section } from "deco/blocks/section.ts";
 
 export type VerticalSpacing = "top" | "bottom" | "both" | "none";
 export type ShadowSize =
