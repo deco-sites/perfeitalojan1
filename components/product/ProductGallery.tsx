@@ -6,6 +6,9 @@ import { HighLight } from "$store/components/product/ProductHighlights.tsx";
 
 export interface Props {
   products: Product[] | null;
+  /**
+   * @description Flags, displayed when  products are found
+   */    
   highlights?: HighLight[];  
 }
 

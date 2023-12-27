@@ -16,6 +16,9 @@ import type { HighLight } from "$store/components/product/ProductHighlights.tsx"
 
 export interface Props {
   page: LoaderReturnType<ProductListingPage | null>;
+  /**
+   * @description Flags, displayed when  products are found
+   */    
   highlights?: HighLight[];  
   /**
    * @description Use drawer for mobile like behavior on desktop. Aside for rendering the filters alongside the products
