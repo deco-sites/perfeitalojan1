@@ -10,19 +10,20 @@ import * as $$2 from "./islands/Debug.tsx";
 import * as $$3 from "./islands/HeaderButton.tsx";
 import * as $$4 from "./islands/HeaderModals.tsx";
 import * as $$5 from "./islands/HeaderSearchbar.tsx";
-import * as $$6 from "./islands/Newsletter.tsx";
-import * as $$7 from "./islands/NewsletterModal.tsx";
-import * as $$8 from "./islands/OutOfStock.tsx";
-import * as $$9 from "./islands/ProductButtonFloatingText.tsx";
-import * as $$10 from "./islands/ProductDetailsImage.tsx";
-import * as $$11 from "./islands/ProductGallery.tsx";
-import * as $$12 from "./islands/ProductImageZoom.tsx";
-import * as $$13 from "./islands/SearchControls.tsx";
-import * as $$14 from "./islands/SearchResultsGridChoice.tsx";
-import * as $$15 from "./islands/ShippingSimulation.tsx";
-import * as $$16 from "./islands/SliderJS.tsx";
-import * as $$17 from "./islands/Sort.tsx";
-import * as $$18 from "./islands/WishlistButton.tsx";
+import * as $$6 from "./islands/HeroSectionCarroussel.tsx";
+import * as $$7 from "./islands/Newsletter.tsx";
+import * as $$8 from "./islands/NewsletterModal.tsx";
+import * as $$9 from "./islands/OutOfStock.tsx";
+import * as $$10 from "./islands/ProductButtonFloatingText.tsx";
+import * as $$11 from "./islands/ProductDetailsImage.tsx";
+import * as $$12 from "./islands/ProductGallery.tsx";
+import * as $$13 from "./islands/ProductImageZoom.tsx";
+import * as $$14 from "./islands/SearchControls.tsx";
+import * as $$15 from "./islands/SearchResultsGridChoice.tsx";
+import * as $$16 from "./islands/ShippingSimulation.tsx";
+import * as $$17 from "./islands/SliderJS.tsx";
+import * as $$18 from "./islands/Sort.tsx";
+import * as $$19 from "./islands/WishlistButton.tsx";
 
 const manifest = {
   routes: {
@@ -36,19 +37,20 @@ const manifest = {
     "./islands/HeaderButton.tsx": $$3,
     "./islands/HeaderModals.tsx": $$4,
     "./islands/HeaderSearchbar.tsx": $$5,
-    "./islands/Newsletter.tsx": $$6,
-    "./islands/NewsletterModal.tsx": $$7,
-    "./islands/OutOfStock.tsx": $$8,
-    "./islands/ProductButtonFloatingText.tsx": $$9,
-    "./islands/ProductDetailsImage.tsx": $$10,
-    "./islands/ProductGallery.tsx": $$11,
-    "./islands/ProductImageZoom.tsx": $$12,
-    "./islands/SearchControls.tsx": $$13,
-    "./islands/SearchResultsGridChoice.tsx": $$14,
-    "./islands/ShippingSimulation.tsx": $$15,
-    "./islands/SliderJS.tsx": $$16,
-    "./islands/Sort.tsx": $$17,
-    "./islands/WishlistButton.tsx": $$18,
+    "./islands/HeroSectionCarroussel.tsx": $$6,
+    "./islands/Newsletter.tsx": $$7,
+    "./islands/NewsletterModal.tsx": $$8,
+    "./islands/OutOfStock.tsx": $$9,
+    "./islands/ProductButtonFloatingText.tsx": $$10,
+    "./islands/ProductDetailsImage.tsx": $$11,
+    "./islands/ProductGallery.tsx": $$12,
+    "./islands/ProductImageZoom.tsx": $$13,
+    "./islands/SearchControls.tsx": $$14,
+    "./islands/SearchResultsGridChoice.tsx": $$15,
+    "./islands/ShippingSimulation.tsx": $$16,
+    "./islands/SliderJS.tsx": $$17,
+    "./islands/Sort.tsx": $$18,
+    "./islands/WishlistButton.tsx": $$19,
   },
   baseUrl: import.meta.url,
 };
