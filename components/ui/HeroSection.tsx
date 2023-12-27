@@ -1,7 +1,7 @@
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 import type { Video as LiveVideo } from "deco-sites/std/components/types.ts";
 import Video from "apps/website/components/Video.tsx";
-import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
+import { Picture, Source } from "apps/website/components/Picture.tsx";
 import type { HTML } from "deco-sites/std/components/types.ts";
 import useMedia from "../../sdk/useMedia.ts";
 

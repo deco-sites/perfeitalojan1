@@ -1,5 +1,4 @@
-import { proxy } from "deco/clients/withManifest.ts";
-import type { Manifest } from "./manifest.gen.ts";
-import type { Manifest as ManifestVTEX } from "apps/vtex/manifest.gen.ts";
+import { forApp } from "$live/clients/withManifest.ts";
+import type { Storefront } from "./apps/site.ts";
 
-export const invoke = proxy<Manifest & ManifestVTEX>();
+export const Runtime = forApp<Storefront>();
