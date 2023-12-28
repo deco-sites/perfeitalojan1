@@ -37,7 +37,7 @@ function SearchControls(
           strokeWidth={2}
           class="text-secondary-focus"
         />
-      </Button>     
+      </Button>
 
       <Modal
         showHeader
@@ -53,7 +53,7 @@ function SearchControls(
         <div class="p-8 py-2">
           <Filters filters={filters} />
         </div>
-      </Modal>    
+      </Modal>
     </>
   );
 }

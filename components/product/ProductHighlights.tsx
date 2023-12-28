@@ -129,33 +129,22 @@ function ProductHighlights(props: Props) {
           ) => {
             if (propertyID == collectionId) {
               return (
-                <div
-                  class={`product-highlights flex box-content  w-fit text-[9px] 2xl:text-[10px] uppercase font-bold border-none  rounded-lg  bg-opacity-100 opacity-100
-                  ${rowStart ? GRID_ROW_START[rowStart] : "row-start-auto"}
-                  ${
-                    columnStart ? GRID_COL_START[columnStart] : "col-start-auto"
-                  }
-                  ${GRID_ROW_SPAN[rowSpan ?? 0]}
-                  ${GRID_COL_SPAN[colSpan ?? 0]}  
-                  ${GRID_ROW_HORIZONTAL[alignHorizontal ?? "start"]}  
-                  ${icon ? "p-0 self-start" : "p-1 2xl:p-2 self-start"}
-                  `}
-                  style={{
-                    background: backgorundColor,
-                    color,
-                  }}
-                >
-                  {icon
-                    ? (
-                      <Image
-                        src={icon}
-                        width={58}
-                        height={58}
-                      />
-                    )
-                    : label
-                    ? label
-                    : value}
+                <div class="absolute w-full left-0 top-0 p-[10px] flex items-center z-10">
+                  <div class="w-full h-full z-10 grid grid-cols-2 gap-y-1">
+                    <div class=
+                      {`product-highlights flex box-content  w-fit text-[9px] 2xl:text-[10px] uppercase font-bold border-none  rounded-lg  bg-opacity-100 opacity-100
+                        ${rowStart ? GRID_ROW_START[rowStart] : "row-start-auto"}
+                        ${columnStart ? GRID_COL_START[columnStart] : "col-start-auto"}
+                        ${GRID_ROW_SPAN[rowSpan ?? 0]}
+                        ${GRID_COL_SPAN[colSpan ?? 0]}  
+                        ${GRID_ROW_HORIZONTAL[alignHorizontal ?? "start"]}  
+                        ${icon ? "p-0 self-start" : "p-1 2xl:p-2 self-start"}
+                      `}
+                      style={{background: backgorundColor,color,}}
+                    >
+                      {icon ? (<Image src={icon} width={58} height={58} />) : label ? label : value}
+                    </div>                  
+                  </div>
                 </div>
               );
             } else {

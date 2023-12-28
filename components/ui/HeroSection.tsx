@@ -5,15 +5,14 @@ import { Picture, Source } from "apps/website/components/Picture.tsx";
 import type { HTML } from "deco-sites/std/components/types.ts";
 import useMedia from "../../sdk/useMedia.ts";
 
-
 export interface VideoProps {
   /**
-   * @description ID of video mobile
+   * @description (Insira o vídeo ou link para Mobile)
    */
   videoMobile?: LiveVideo;
 
   /**
-   * @description ID of video desktop
+   * @description (Insira o vídeo ou link para Desktop)
    */
   videoDesktop?: LiveVideo;
 }
@@ -114,8 +113,6 @@ function BannerComponent(
   );
 }
 
-
-
 function VideoComponent({ media }: { media: VideoProps }) {
   const isMobile = useMedia("(max-width: 767px)", true);
   const videoSource = isMobile ? media.videoMobile : media.videoDesktop;
@@ -123,21 +120,23 @@ function VideoComponent({ media }: { media: VideoProps }) {
   return (
     <>
       <div class="block">
-        {videoSource ? (
-          <Video
-            src={videoSource}
-            width={150}
-            height={150}
-            class="w-full h-auto"
-            loop
-            muted
-            autoPlay
-            playsInline
-            loading={"eager"}
-          >
-            <source src={videoSource} type="video/mp4" />
-          </Video>
-        ) : null}
+        {videoSource
+          ? (
+            <Video
+              src={videoSource}
+              width={150}
+              height={150}
+              class="w-full h-auto"
+              loop
+              muted
+              autoPlay
+              playsInline
+              loading={"eager"}
+            >
+              <source src={videoSource} type="video/mp4" />
+            </Video>
+          )
+          : null}
       </div>
     </>
   );
@@ -200,9 +199,7 @@ export default function HeroSectionComponent({ media, cta, preload }: Props) {
         )}
       <div
         style={bannerMoreStyles || ""}
-        // h-[calc(100%-50vw)] px-[10%]
-        class={`flex absolute w-full top-[50vw] pb-[40px] lg:(top-[14vw] h-[calc(100%-14vw)] px-[95px] pb-[85px]) ${horizontal} ${horizontalText} ${vertical}`}
-      >
+        class={`flex absolute w-full top-[50%] h-[calc(100%-50vw)] px-[10%] pb-[40px] lg:(top-[14vw] pb-[85px]) ${horizontal} ${horizontalText} ${vertical}`}>
         <div>
           <h2
             style={title.moreStyles}

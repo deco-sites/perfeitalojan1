@@ -66,8 +66,8 @@ export interface Props {
   preload?: boolean;
   /**
    * @description Flags, displayed when  products are found
-   */  
-  highlights?: HighLight[];  
+   */
+  highlights?: HighLight[];
   /** @description used for analytics event */
   itemListName?: string;
   layout?: Layout;
@@ -81,7 +81,9 @@ export const relative = (url: string) => {
 const WIDTH = 279;
 const HEIGHT = 270;
 
-function ProductCard({ product, preload, itemListName, layout, highlights }: Props) {
+function ProductCard(
+  { product, preload, itemListName, layout, highlights }: Props,
+) {
   const {
     url,
     productID,

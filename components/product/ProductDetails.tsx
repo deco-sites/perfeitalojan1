@@ -40,7 +40,7 @@ export interface Props {
     label: string;
     link: string;
   };
-  shareableNetworks?: ShareableNetwork[]; 
+  shareableNetworks?: ShareableNetwork[];
   highlights?: HighLight[];
 }
 
@@ -68,7 +68,7 @@ function ProductInfo(
   { page, shipmentPolitics, shareableNetworks }: {
     page: ProductDetailsPage;
     shipmentPolitics?: Props["shipmentPolitics"];
-    shareableNetworks?: Props["shareableNetworks"]; 
+    shareableNetworks?: Props["shareableNetworks"];
   },
 ) {
   const {
@@ -89,7 +89,7 @@ function ProductInfo(
   );
 
   return (
-    <>     
+    <>
       <div class="floating bg-[#2F1893] w-full h-[80px] fixed left-0 top-[80px] z-20 container-floating is-hidden">
         <div class="floating__container grid grid-cols-9 grid-rows-none h-full items-center max-w-[80%] item-floating my-0 mx-auto">
           <ProductButtonFloatingText product={product} />
@@ -99,14 +99,14 @@ function ProductInfo(
             </span>
             <span class="text-white text-xs">
               ou {installments}
-            </span>            
-          </div>    
+            </span>
+          </div>
           <div class="floating__button mt-0 flex flex-col gap-4 col-[8/10]">
             {availability === "https://schema.org/InStock"
               ? (
                 <>
                   {seller && (
-                    <AddToCartButton 
+                    <AddToCartButton
                       skuId={productID}
                       sellerId={seller}
                       price={price ?? 0}
@@ -115,13 +115,12 @@ function ProductInfo(
                       productGroupId={product.isVariantOf?.productGroupID ?? ""}
                       quantity={1}
                       classes="btn-primary btn-block transition-all max-w-sm hover:text-neutral-100 font-medium text-secondary-focus h-10"
-                    /> 
+                    />
                   )}
                 </>
               )
-              : <OutOfStock productID={productID} />
-            }
-          </div>                
+              : <OutOfStock productID={productID} />}
+          </div>
         </div>
       </div>
 
@@ -318,7 +317,7 @@ function Details({
   variant,
   shipmentPolitics,
   shareableNetworks,
-  highlights
+  highlights,
 }: {
   page: ProductDetailsPage;
   variant: Variant;
@@ -355,7 +354,7 @@ function Details({
             width={WIDTH}
             height={HEIGHT}
             aspect={ASPECT_RATIO}
-            product={product}            
+            product={product}
           />
 
           {/* Product Info */}
@@ -408,8 +407,13 @@ function Details({
 }
 
 function ProductDetails(
-  { page, variant: maybeVar = "auto", shipmentPolitics, shareableNetworks, highlights, }:
-    Props,
+  {
+    page,
+    variant: maybeVar = "auto",
+    shipmentPolitics,
+    shareableNetworks,
+    highlights,
+  }: Props,
 ) {
   /**
    * Showcase the different product views we have on this template. In case there are less
