@@ -65,7 +65,7 @@ export interface Props {
   product: Product;
   preload?: boolean;
   /**
-   * @description Flags, displayed when  products are found
+   * @description Flags, exibidos quando os produtos são encontrados
    */
   highlights?: HighLight[];
   /** @description used for analytics event */

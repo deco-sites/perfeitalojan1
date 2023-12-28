@@ -15,23 +15,46 @@ export type HighlightsColors =
   | "warning"
   | "error";
 
+export type ColumnStart =
+  | "esquerda"
+  | "direita";
+
+export type AlignVertical =
+  | "superior"
+  | "meio"
+  | "inferior";
+
 export type AlignHorizontal =
-  | "end"
-  | "start"
-  | "center";
+  | "esquerda"
+  | "centro"
+  | "direita";
+
+export type WidthElement =
+  | "auto"
+  | "75%"
+  | "100%";
 
 export interface HighLight {
+  /** @description (caso seja inserido imagem, o texto não irá aparecer) */  
   icon?: ImageWidget;
+  /** @title Texto */ 
   label?: string;
+  /** @description (consultar ID da Coleção no admin da VTEX) */   
   collectionId: string;
+  /** @title Cor do fundo */   
+  /** @description (link de cores: https://www.w3schools.com/cssref/css_colors.php) */   
   backgorundColor?: string;
+  /** @title Cor do texto */   
+  /** @description (link de cores: https://www.w3schools.com/cssref/css_colors.php) */  
   color?: string;
-  /** @title placement column */
-  columnStart?: number;
-  /** @title placement row */
-  rowStart?: number;
-  rowSpan?: number;
-  colSpan?: number;
+  /** @title Posição horizontal do elemento */
+  columnStart?: ColumnStart;
+  /** @title Alinhamento vertical da linha */
+  alignVertical?: AlignVertical;
+  /** @title Largura do elemento */
+  widthElement?: WidthElement;
+  /** @title Alinhamento horizontal */ 
+  /** @description (conforme Posição selecionada) */ 
   alignHorizontal?: AlignHorizontal;
 }
 
@@ -41,64 +64,27 @@ type Props = {
   highlights?: HighLight[];
 };
 
-const GRID_ROWS: Record<number, string> = {
-  1: "grid-rows-1",
-  2: "grid-rows-2",
-  3: "grid-rows-3",
-  4: "grid-rows-4",
-  5: "grid-rows-5",
-  6: "grid-rows-6",
-};
-
-const GRID_COLUMNS: Record<number, string> = {
-  1: "grid-cols-1",
-  2: "grid-cols-2",
-  3: "grid-cols-3",
-  4: "grid-cols-4",
-  5: "grid-cols-5",
-  6: "grid-cols-6",
-};
-
-export const GRID_COL_START: Record<number, string> = {
-  1: "col-start-1",
-  2: "col-start-2",
-  3: "col-start-3",
-  4: "col-start-4",
-  5: "col-start-5",
-  6: "col-start-6",
-};
-
-export const GRID_ROW_START: Record<number, string> = {
-  1: "row-start-1",
-  2: "row-start-2",
-  3: "row-start-3",
-  4: "row-start-4",
-  5: "row-start-5",
-  6: "row-start-6",
-};
-
-export const GRID_ROW_SPAN: Record<number, string> = {
-  1: "row-span-1",
-  2: "row-span-2",
-  3: "row-span-3",
-  4: "row-span-4",
-  5: "row-span-5",
-  6: "row-span-6",
-};
-
-export const GRID_COL_SPAN: Record<number, string> = {
-  1: "col-span-1",
-  2: "col-span-2",
-  3: "col-span-3",
-  4: "col-span-4",
-  5: "col-span-5",
-  6: "col-span-6",
+export const GRID_COL_START: Record<ColumnStart, string> = {
+  "esquerda" : "col-start-1",
+  "direita" : "col-start-2",
 };
 
 export const GRID_ROW_HORIZONTAL: Record<AlignHorizontal, string> = {
-  "end": "justify-self-end",
-  "start": "justify-self-start",
-  "center": "justify-self-center",
+  "esquerda": "justify-self-start",
+  "centro": "justify-self-center",
+  "direita": "justify-self-end",
+};
+
+export const WIDTH_ELEMENT: Record<WidthElement, string> = {
+  "auto": "auto",
+  "75%": "75%",
+  "100%": "100%",
+};
+
+export const ALIGN_VERTICAL: Record<AlignVertical, string> = {
+  "superior": "row-start-1",
+  "meio": "row-start-2",
+  "inferior": "row-start-3",
 };
 
 function ProductHighlights(props: Props) {
@@ -120,11 +106,10 @@ function ProductHighlights(props: Props) {
               color,
               label,
               icon,
-              colSpan,
-              rowStart,
               columnStart,
-              rowSpan,
+              widthElement,
               alignHorizontal,
+              alignVertical,
             },
           ) => {
             if (propertyID == collectionId) {
@@ -132,15 +117,14 @@ function ProductHighlights(props: Props) {
                 <div class="absolute w-full left-0 top-0 p-[10px] flex items-center z-10">
                   <div class="w-full h-full z-10 grid grid-cols-2 gap-y-1">
                     <div class=
-                      {`product-highlights flex box-content  w-fit text-[9px] 2xl:text-[10px] uppercase font-bold border-none  rounded-lg  bg-opacity-100 opacity-100
-                        ${rowStart ? GRID_ROW_START[rowStart] : "row-start-auto"}
+                      {`product-highlights flex box-content h-[25px] text-[9px] 2xl:text-[10px] items-center uppercase font-bold border-none rounded-lg  bg-opacity-100 opacity-100 justify-center
+                        ${alignVertical ? ALIGN_VERTICAL[alignVertical] : "row-start-auto"}
                         ${columnStart ? GRID_COL_START[columnStart] : "col-start-auto"}
-                        ${GRID_ROW_SPAN[rowSpan ?? 0]}
-                        ${GRID_COL_SPAN[colSpan ?? 0]}  
-                        ${GRID_ROW_HORIZONTAL[alignHorizontal ?? "start"]}  
+                        ${alignHorizontal ? GRID_ROW_HORIZONTAL[alignHorizontal] : "items-center"}  
                         ${icon ? "p-0 self-start" : "p-1 2xl:p-2 self-start"}
+                        ${widthElement ? "w-" + WIDTH_ELEMENT[widthElement] : "w-auto" }
                       `}
-                      style={{background: backgorundColor,color,}}
+                      style={{background: backgorundColor,color, width: widthElement}}
                     >
                       {icon ? (<Image src={icon} width={58} height={58} />) : label ? label : value}
                     </div>                  

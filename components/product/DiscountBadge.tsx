@@ -1,10 +1,11 @@
 import {
   AlignHorizontal,
-  GRID_COL_SPAN,
   GRID_COL_START,
+  WidthElement,
+  AlignVertical,
+  ALIGN_VERTICAL,
   GRID_ROW_HORIZONTAL,
-  GRID_ROW_SPAN,
-  GRID_ROW_START,
+  ColumnStart,
 } from "$store/components/product/ProductHighlights.tsx";
 
 type Props = {
@@ -13,10 +14,9 @@ type Props = {
   label?: string;
   variant?: string;
   className?: string;
-  columnStart?: number;
-  rowStart?: number;
-  rowSpan?: number;
-  colSpan?: number;
+  columnStart?: ColumnStart;
+  alignVertical?:AlignVertical;
+  widthElement?: WidthElement;
   alignHorizontal?: AlignHorizontal;
 };
 
@@ -26,10 +26,9 @@ function DiscountBadge({
   label,
   variant,
   className,
-  colSpan,
-  rowStart,
+  widthElement,
+  alignVertical,
   columnStart,
-  rowSpan,
   alignHorizontal,
 }: Props) {
   const discount = ((listPrice - price) / listPrice) * 100;
@@ -38,12 +37,11 @@ function DiscountBadge({
     <div
       class={`tag-container flex items-center z-10  
       ${className}
-      ${rowStart ? GRID_ROW_START[rowStart] : "row-start-auto"}
+      ${alignVertical ? ALIGN_VERTICAL[alignVertical] : "row-start-auto"}
       ${columnStart ? GRID_COL_START[columnStart] : "col-start-auto"}
-      ${GRID_ROW_SPAN[rowSpan ?? 0]}
-      ${GRID_COL_SPAN[colSpan ?? 0]}  
-      ${GRID_ROW_HORIZONTAL[alignHorizontal ?? "start"]}  
+      ${alignHorizontal ? GRID_ROW_HORIZONTAL[alignHorizontal] : "items-center"}     
       `}
+      style={{width: widthElement}}      
     >
       <div
         class={`absolute left-0 top-0 p-[10px] flex items-center z-10 ${className}`}
