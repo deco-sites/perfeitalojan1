@@ -37,17 +37,13 @@ export default function HeroSectionCarroussel({
 
   const nextBanner = () => {
     handleButtonAction(() => {
-      inFocus.value === banner.length - 1
-        ? (inFocus.value = 0)
-        : (inFocus.value = inFocus.value + 1);
+      inFocus.value === banner.length - 1 ? (inFocus.value = 0) : (inFocus.value = inFocus.value + 1);
     });
   };
 
   const previousBanner = () => {
     handleButtonAction(() => {
-      inFocus.value === 0
-        ? (inFocus.value = banner.length - 1)
-        : (inFocus.value = inFocus.value - 1);
+      inFocus.value === 0 ? (inFocus.value = banner.length - 1) : (inFocus.value = inFocus.value - 1);
     });
   };
 
@@ -62,19 +58,17 @@ export default function HeroSectionCarroussel({
     setInterval(nextBanner, slider.interval * 1000);
   const inFocus = useSignal(0);
 
+  if (!banner) return null;
   return (
-    <div
-      class={`relative ${isHeaderTransparent ? "" : "lg:mt-[99px] mt-[60px]"}`}
-    >
-      <div class="flex flex-row overflow-auto scrollbar-none">
+    <div class={`custom-banner-one relative ${isHeaderTransparent ? "" : "lg:mt-[99px] mt-[60px]"}`}>
+      <div class="custom-banner-one__container flex flex-row overflow-auto scrollbar-none">
         {banner.map((ban, index) => (
-          <div
-            key={index}
-            class={`children:w-screen -ml-[calc(100vw*${index})] ${
-              index === inFocus.value
-                ? "opacity-100"
+          <div key={index} 
+            class={`custom-banner-one__item children:w-screen -ml-[calc(100vw*${index})] 
+              ${index === inFocus.value 
+                ? "opacity-100" 
                 : "opacity-0 pointer-events-none"
-            } transition-all duration-500`}
+              } transition-all duration-500`}
             onClick={() => toBanner(index)}
           >
             <HeroSectionComponent {...ban} preload={index === 0} />
@@ -83,15 +77,14 @@ export default function HeroSectionCarroussel({
       </div>
       {banner.length > 1 && (
         <>
-          <div class="flex absolute w-full bottom-[15px] lg:bottom-[70px] z-10 gap-2 justify-center">
+          <div class="custom-banner-more flex absolute w-full bottom-[15px] lg:bottom-[70px] z-10 gap-2 justify-center">
             {banner?.map((bann, index) => (
-              <div
-                key={index}
-                class={`h-[3px] transition-all cursor-pointer ${
-                  inFocus.value === index
-                    ? "bg-primary w-[25px]"
-                    : "bg-white w-[15px]"
-                }`}
+              <div key={index} 
+                class={`h-[3px] transition-all cursor-pointer 
+                  ${inFocus.value === index
+                      ? "bg-primary w-[25px]"
+                      : "bg-white w-[15px]"
+                  }`}
                 onClick={() => toBanner(index)}
               >
               </div>
@@ -101,7 +94,6 @@ export default function HeroSectionCarroussel({
             <div class="relative z-10 col-start-1 row-start-3">
               <div class="absolute left-0 md:left-[20px]! hover:bg-interactive-inverse transition-all duration-200 rounded-full w-[40px] h-[40px] flex justify-center items-center hover:shadow-arrow">
                 <Button
-                  variant="icon"
                   data-slide="prev"
                   aria-label="Previous item"
                   onClick={previousBanner}
@@ -119,7 +111,6 @@ export default function HeroSectionCarroussel({
             <div class="relative z-10 col-start-3 row-start-3">
               <div class="absolute right-0 md:right-[20px] hover:bg-interactive-inverse transition-all duration-200 rounded-full w-[40px] h-[40px] flex justify-center items-center hover:shadow-arrow">
                 <Button
-                  variant="icon"
                   data-slide="next"
                   aria-label="Next item"
                   onClick={nextBanner}

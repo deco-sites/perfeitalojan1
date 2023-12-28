@@ -92,7 +92,7 @@ function Form(props: Props) {
           ?.value;
       }
 
-      await subscribe({ email, name });
+      if(email && name) await subscribe({ email, name });
     } finally {
       loading.value = false;
       success.value = true;
