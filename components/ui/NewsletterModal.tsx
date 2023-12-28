@@ -109,7 +109,7 @@ function NewsletterModal(
 
   useEffect(() => {
     if (isOpen) {
-      modalRef.current?.showModal();
+      // modalRef.current?.showModal();
     }
   }, [isOpen]);
 
