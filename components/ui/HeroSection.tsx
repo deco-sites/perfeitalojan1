@@ -1,127 +1,90 @@
-import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 import type { Video as LiveVideo } from "deco-sites/std/components/types.ts";
 import Video from "apps/website/components/Video.tsx";
-import { Picture, Source } from "apps/website/components/Picture.tsx";
 import type { HTML } from "deco-sites/std/components/types.ts";
 import useMedia from "../../sdk/useMedia.ts";
 
 export interface VideoProps {
-  /**
-   * @description (Insira o vídeo ou link para Mobile)
-   */
-  videoMobile?: LiveVideo;
+  /** @title Vídeo para Desktop (*) */
+  /** @description (Inserir Vídeo ou imagem com a mesma largura. Ex: 1920px) */
+  videoDesktop: LiveVideo;
 
-  /**
-   * @description (Insira o vídeo ou link para Desktop)
-   */
-  videoDesktop?: LiveVideo;
+  /** @title Vídeo para Mobile (*) */
+  /** @description (Inserir Vídeo ou imagem com a mesma largura. Ex: 1920px) */
+  videoMobile: LiveVideo;
 }
 
-export interface ImageProps {
-  /** @description Seu banner Mobile */
-  mobile: {
-    banner: LiveImage;
-    imageWidth: number;
-    imageHeight: number;
-  };
-  /** @description Seu banner Desktop */
-  desktop: {
-    banner: LiveImage;
-    imageWidth: number;
-    imageHeight: number;
-  };
+interface Title{
+    /** @title Editor para texto */
+    richtext?: HTML;  
+    /** @title Tamanho da fonte - Mobile */
+    /** @description (ex: 20px) */        
+    sizeMobile?: string;
+}
+
+interface Subtitle{
+    /** @title Mostrar o título? */    
+    showSubtitle?: boolean;
+    /** @title Editor para texto */    
+    richtext?: HTML;
+    /** @title Tamanho da fonte - Mobile */    
+    /** @description (ex: 20px) */    
+    sizeMobile?: string;
+}
+
+interface Position{
+  /** @title Posicionamento vertical */    
+  vertical?: "inferior" | "centro" | 'superior';
+  /** @title Posicionamento horizontal */    
+  horizontal?: "esquerda" | "centro" | "direita";
 }
 
 export interface CTAProps {
-  title: {
-    richtext: HTML;
-    sizeDesktop: string;
-    sizeMobile: string;
-    lineHeightDesktop?: string;
-    lineHeightMobile?: string;
-    moreStyles?: string;
-  };
-  subTitle?: {
-    showSubtitle: boolean;
-    richtext: HTML;
-    sizeDesktop: string;
-    sizeMobile: string;
-    lineHeightDesktop?: string;
-    lineHeightMobile?: string;
-    moreStyles?: string;
-  };
-  TitleFont: "Nunito" | "Lusitana" | "Avenir";
+  /** @title Título - (configurações) */
+  title: Title;
+  /** @title Subtítulo - (configurações) */  
+  subTitle?: Subtitle;
+  /** @title Botão */   
   buttons: Button[];
-
-  position: {
-    vertical: "bottom" | "center";
-    horizontal: "left" | "center" | "right";
-  };
-
+  /** @title Posição */   
+  position: Position;
+    /** @title Link para o Vídeo/Banner */  
   bannerHref?: string;
-  bannerMoreStyles?: string;
 }
 
 export interface Button {
+  /** @title Texto */  
   title: string;
-  link: string;
-  variant: "blue" | "white" | "black" | "outline";
-  /** @description Width em px no mobile (ex: 200px) */
+  /** @title Link  */
+  link?: string;
+  // variant: "blue" | "white" | "black" | "outline";
+  /** @title Cor do fundo (*)  */
+  /** @description (link de cores: https://www.w3schools.com/cssref/css_colors.php) */ 
+  backgroundColorButton?: string;
+  /** @title Cor do texto (*)  */ 
+  /** @description (link de cores: https://www.w3schools.com/cssref/css_colors.php) */   
+  textColorButton?: string;
+  /** @title Largura do botão - Mobile  */  
+  /** @description (ex: 200px) */
   mobileWidth?: string;
-  /** @description Width em px no desktop (ex: 350px) */
+  /** @title Largura do botão - Desktop  */    
+  /** @description  (ex: 350px) */
   desktopWidth?: string;
 }
 
 export interface Props {
-  media: VideoProps | ImageProps;
+  media: VideoProps;
   cta: CTAProps;
   preload?: boolean;
 }
 
-function BannerComponent(
-  { media, alt, preload = true }: {
-    media: ImageProps;
-    alt: string;
-    preload?: boolean;
-  },
-) {
-  return (
-    <>
-      <Picture class="w-full" preload={true}>
-        <Source
-          media="(max-width: 1024px)"
-          fetchPriority={preload ? "high" : undefined}
-          src={media?.mobile.banner}
-          width={media?.mobile.imageWidth}
-          height={media?.mobile.imageHeight}
-        />
-        <Source
-          media="(min-width: 1025px)"
-          fetchPriority={preload ? "high" : undefined}
-          src={media?.desktop.banner}
-          width={media?.desktop.imageWidth}
-          height={media?.desktop.imageHeight}
-        />
-        <img
-          class="object-cover w-full sm:h-full"
-          loading={preload ? "eager" : undefined}
-          src={media?.desktop.banner}
-          alt={alt}
-        />
-      </Picture>
-    </>
-  );
-}
-
 function VideoComponent({ media }: { media: VideoProps }) {
   const isMobile = useMedia("(max-width: 767px)", true);
-  const videoSource = isMobile ? media.videoMobile : media.videoDesktop;
+  const videoSource = !isMobile ? media.videoDesktop : media.videoMobile;
 
   return (
     <>
       <div class="block">
-        {videoSource
-          ? (
+        {videoSource ? (
             <Video
               src={videoSource}
               width={150}
@@ -129,7 +92,7 @@ function VideoComponent({ media }: { media: VideoProps }) {
               class="w-full h-auto"
               loop
               muted
-              autoPlay
+              autoplay
               playsInline
               loading={"eager"}
             >
@@ -142,117 +105,68 @@ function VideoComponent({ media }: { media: VideoProps }) {
   );
 }
 
-function buttonVariantClass(variant: string) {
-  switch (variant) {
-    case "white":
-      return "bg-white text-black";
-    case "black":
-      return "bg-black text-white";
-    case "outline":
-      return "bg-transparent text-white border-1 border-white";
-  }
-  return "bg-primary text-white";
-}
-
 export default function HeroSectionComponent({ media, cta, preload }: Props) {
-  const horizontal = cta?.position?.horizontal === "left"
-    ? "justify-start"
-    : cta?.position?.horizontal === "center"
-    ? "justify-center"
-    : "justify-end";
-
-  const horizontalText = cta?.position?.horizontal === "left"
-    ? "text-left"
-    : cta?.position?.horizontal === "center"
-    ? "text-center"
-    : "text-right";
-
-  const vertical = cta?.position?.vertical === "center"
-    ? "items-start"
-    : "items-end";
-
-  const {
-    TitleFont,
-    title: _title,
-    subTitle,
-    buttons,
-    bannerHref,
-    bannerMoreStyles,
-  } = cta ?? {};
-
+  const horizontal = cta?.position?.horizontal === "esquerda" ? "justify-start": cta?.position?.horizontal === "centro" ? "justify-center": "justify-end";
+  const horizontalText = cta?.position?.horizontal === "esquerda" ? "text-left": cta?.position?.horizontal === "centro"? "text-center": "text-right";
+  const vertical = cta?.position?.vertical === "centro"? "items-center": cta?.position?.vertical === "superior" ?  "items-end" : "items-start";
+  const {title: _title, subTitle, buttons, bannerHref } = cta ?? {};
   const title = _title ?? {};
+  
   return (
-    <section
-      class={`relative overflow-hidden ${
-        bannerHref ? "cursor-pointer" : "pointer-events-none"
-      }`}
+    <section class={`relative overflow-hidden ${bannerHref ? "cursor-pointer" : "pointer-events-none"}`}
       onClick={() => bannerHref && (window.location.href = bannerHref)}
     >
-      {(media as VideoProps)?.videoMobile
-        ? <VideoComponent media={media as VideoProps} />
-        : (
-          <BannerComponent
-            media={media as ImageProps}
-            alt={title.richtext}
-            preload={preload}
-          />
-        )}
+      {(media as VideoProps)?.videoMobile && <VideoComponent media={media as VideoProps} />}
       <div
-        style={bannerMoreStyles || ""}
         class={`flex absolute w-full top-[50%] h-[calc(100%-50vw)] px-[10%] pb-[40px] lg:(top-[14vw] pb-[85px]) ${horizontal} ${horizontalText} ${vertical}`}>
         <div>
-          <h2
-            style={title.moreStyles}
-            class={`textShadow text-[${title.sizeMobile}] lg:(text-[${title.sizeDesktop}]) leading-${`${
-              title.lineHeightMobile ? `[${title.lineHeightMobile}]` : "normal"
-            }`} lg:leading-${`${
-              title.lineHeightDesktop
-                ? `[${title.lineHeightDesktop}]`
-                : "normal"
-            }`} ${
-              TitleFont == "Lusitana"
-                ? "font-lusitana"
-                : TitleFont == "Avenir"
-                ? "font-Avenir"
-                : "font-nunito"
-            }`}
-            dangerouslySetInnerHTML={{ __html: title.richtext }}
-          >
-          </h2>
-          {subTitle?.showSubtitle &&
+          <style
+            dangerouslySetInnerHTML={{
+              __html: `
+                @media( max-width: 767px ){
+                  h2.hero-section__title > *,
+                  h2.hero-section__title > * > *,
+                  h2.hero-section__title > * > * > * {
+                    font-size:${title.sizeMobile} !important;
+                  }  
+                  
+                  .hero-section__subtitle > *,                  
+                  .hero-section__subtitle > * > *,
+                  .hero-section__subtitle > * > * > *{
+                    font-size:${title.sizeMobile} !important;
+                  }              
+                }
+              `,
+            }}
+          />          
+          { title && title.richtext && 
+            (
+              <h2 class={`hero-section__title textShadow text-[${title.sizeMobile}]`} dangerouslySetInnerHTML={{ __html: title.richtext }}></h2>
+            ) 
+          }
+          {subTitle?.showSubtitle && subTitle.richtext &&
             (
               <span
-                style={subTitle?.moreStyles}
-                class={`text-[${subTitle?.sizeMobile}] block mt-3 lg:(text-[${subTitle?.sizeDesktop}]) leading-${`${
-                  title.lineHeightMobile
-                    ? `[${title.lineHeightMobile}]`
-                    : "normal"
-                }`} lg:leading-${`${
-                  title.lineHeightDesktop
-                    ? `[${title.lineHeightDesktop}]`
-                    : "normal"
-                }`}`}
-                dangerouslySetInnerHTML={{ __html: subTitle?.richtext }}
+                class={`hero-section__subtitle text-[${subTitle?.sizeMobile}] block mt-3`}
+                 dangerouslySetInnerHTML={{ __html: subTitle?.richtext }}
               >
               </span>
-            )}
+            )
+          }
           <div class={`flex flex-wrap gap-5 ${horizontal}`}>
-            {(buttons ?? []).map(
-              ({ link, title, variant, mobileWidth, desktopWidth }) => {
+            {(buttons ?? []).map(({ link, title, backgroundColorButton, textColorButton, mobileWidth, desktopWidth }) => {
                 return (
                   <a
-                    class={`flex justify-center items-center mt-[20px] max-w-[160px] max-h-[40px] font-bold ${
+                    style={`color: ${textColorButton ? textColorButton : "#ffffff" }; background-color: ${backgroundColorButton ? backgroundColorButton : '#2F1893'};`}
+                    class={`flex justify-center items-center mt-[20px] max-w-[160px] max-h-[40px] font-bold pointer pointer-events-auto hover:opacity-70 ${
                       mobileWidth
                         ? `w-[${mobileWidth}]`
                         : "w-[150px] max-w-[160px] max-h-[40px]"
-                    } lg:${
-                      desktopWidth
+                    } lg:${desktopWidth
                         ? `w-[${desktopWidth}]`
                         : "w-[200px] max-w-[200px] max-h-[40px]"
-                    }! p-2.5 text-[12px] lg:text-[14px]! max-w-[200px] max-h-[40px] rounded-[50px] tracking-[0.7px] transition duration-300 lg:hover:(scale-110 bg-primary text-white border-none) ${
-                      buttonVariantClass(variant)
-                    }`}
-                    href={link}
+                    }! p-2.5 text-[12px] lg:text-[14px]! max-w-[200px] max-h-[40px] rounded-[50px] tracking-[0.7px] transition duration-300 lg:hover:(scale-110 border-none)`}
+                    href={link ? link : "#"}
                   >
                     {title}
                   </a>
