@@ -18,7 +18,7 @@ import * as $$$$$$12 from "./sections/Footer/Footer.tsx";
 import * as $$$$$$13 from "./sections/Header/HeaderLayout.tsx";
 import * as $$$$$$14 from "./sections/Header/TopNavBar.tsx";
 import * as $$$$$$15 from "./sections/HeroSection.tsx";
-import * as $$$$$$16 from "./sections/HeroSectionCarroussel.tsx";
+import * as $$$$$$16 from "./sections/HeroVideoCarroussel.tsx";
 import * as $$$$$$17 from "./sections/Images/BannerGrid.tsx";
 import * as $$$$$$18 from "./sections/Images/Carousel.tsx";
 import * as $$$$$$19 from "./sections/Images/ImageGallery.tsx";
@@ -65,7 +65,7 @@ const manifest = {
     "deco-sites/perfeitalojan1/sections/Header/HeaderLayout.tsx": $$$$$$13,
     "deco-sites/perfeitalojan1/sections/Header/TopNavBar.tsx": $$$$$$14,
     "deco-sites/perfeitalojan1/sections/HeroSection.tsx": $$$$$$15,
-    "deco-sites/perfeitalojan1/sections/HeroSectionCarroussel.tsx": $$$$$$16,
+    "deco-sites/perfeitalojan1/sections/HeroVideoCarroussel.tsx": $$$$$$16,
     "deco-sites/perfeitalojan1/sections/Images/BannerGrid.tsx": $$$$$$17,
     "deco-sites/perfeitalojan1/sections/Images/Carousel.tsx": $$$$$$18,
     "deco-sites/perfeitalojan1/sections/Images/ImageGallery.tsx": $$$$$$19,
