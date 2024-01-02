@@ -6,10 +6,8 @@ import { useState } from "preact/hooks";
 import HeroSectionComponent from "deco-sites/perfeitalojan1/components/ui/HeroSection.tsx";
 
 export interface SliderProps {
-  /** @title Slide infinito?  */
-  infinite: boolean;
-  /** @title Intervalo do Slide  */
-  interval?: number;
+  /** @title Intervalo da transição do Slide (*)  */
+  interval: number;
 }
 
 export interface BannerProps { 
@@ -23,7 +21,7 @@ export interface BannerProps {
 
 type CallbackFunction = () => void;
 
-export default function HeroSectionCarroussel({banner,slider,isHeaderTransparent,}: BannerProps) {
+export default function HeroVideoCarroussel({banner,slider,isHeaderTransparent,}: BannerProps) {
   const [buttonDisabled, setButtonDisabled] = useState(false);
   
   const handleButtonAction = (callback: CallbackFunction) => {
