@@ -85,6 +85,7 @@ function VideoComponent({ media }: { media: VideoProps }) {
     <>
       <div class="block">
         {!isMobile ? (
+          <div class={`${!isMobile && 'is--desktop'} `}>
             <Video
               src={media.videoDesktop}
               width={150}
@@ -98,20 +99,25 @@ function VideoComponent({ media }: { media: VideoProps }) {
             >
               <source src={media.videoDesktop} type="video/mp4" />
             </Video>
+          </div>
           )
-          : <Video
-            src={media.videoMobile}
-            width={150}
-            height={150}
-            class="w-full h-auto"
-            loop
-            muted
-            autoplay
-            playsInline
-            loading={"eager"}
-          >
-            <source src={media.videoMobile} type="video/mp4" />
-          </Video>}
+          : 
+          <div class={`${isMobile && 'is--mobile hidden'} `}>
+            <Video
+              src={media.videoMobile}
+              width={150}
+              height={150}
+              class="w-full h-auto"
+              loop
+              muted
+              autoplay
+              playsInline
+              loading={"eager"}
+            >
+              <source src={media.videoMobile} type="video/mp4" />
+            </Video>
+          </div>          
+        }
       </div>
     </>
   );

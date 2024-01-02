@@ -38,10 +38,13 @@ export default function HeroSectionCarroussel({banner,slider,isHeaderTransparent
 
   const nextBanner = () => {
     const element = document?.querySelector<HTMLElement>('.custom-banner-slide.is-init');
+    const elementLoading = document.querySelector<HTMLElement>('.loading-container');
     if( element ){
       const video = element.querySelector('section .block video');
       if( video instanceof HTMLVideoElement ) video.play();
     }
+
+    if( elementLoading instanceof HTMLElement ) elementLoading.remove();    
     handleButtonAction(() => {
       inFocus.value === banner.length - 1 ? (inFocus.value = 0) : (inFocus.value = inFocus.value + 1);
     });
@@ -49,10 +52,14 @@ export default function HeroSectionCarroussel({banner,slider,isHeaderTransparent
 
   const previousBanner = () => {
     const element = document.querySelector<HTMLElement>('.custom-banner-slide.is-init');
+    const elementLoading = document.querySelector<HTMLElement>('.loading-container');
     if( element ){
       const video = element.querySelector('section .block video');
+      const loading = element.querySelector('is--loading');
       if( video instanceof HTMLVideoElement ) video.play();
-    }    
+    }
+
+    if( elementLoading instanceof HTMLElement ) elementLoading.remove();
     handleButtonAction(() => {
       inFocus.value === 0 ? (inFocus.value = banner.length - 1) : (inFocus.value = inFocus.value - 1);
     });
@@ -78,6 +85,9 @@ export default function HeroSectionCarroussel({banner,slider,isHeaderTransparent
   return (
     <div class={`custom-banner-one relative ${isHeaderTransparent ? "" : "lg:mt-[99px] mt-[60px]"}`}>
       <div class="custom-banner-one__container flex flex-row overflow-auto scrollbar-none">
+        <div class="loading-container absolute w-full h-full bg-black">
+          <div class="is--loading"></div>
+        </div>
         {banner.map((ban, index) => (                    
           <div key={index} class={`custom-banner-slide children:w-screen -ml-[calc(100vw*${index})] ${index === inFocus.value 
                 ? `opacity-100 ${banner.length > 1 && 'absolute'} is-active` 

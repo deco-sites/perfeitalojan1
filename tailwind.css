@@ -76,7 +76,7 @@
     overflow-x: scroll;
     position: relative;
     scroll-behavior: smooth;
-    scroll-snap-type: x mandatory;    
+    scroll-snap-type: x mandatory;  
   }
 
   .custom-banner-slide{
@@ -88,11 +88,45 @@
     transform-origin: center center;    
   }
 
+  .is--loading{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 6px dotted #ccc;
+    border-right-color: blue;
+    animation: loading 1s infinite;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+  }
+
+  @keyframes loading {
+    to {
+      transform: rotate(360deg);
+    }
+  }  
+
   .custom-banner-one [data-slide]{
     @apply btn btn-circle border-none bg-opacity-10 bg-white hover:bg-white hover:bg-opacity-20;
   }
 
+  .is--mobile{
+    display: none;
+  }
+
+  .is--desktop{
+    display: block;
+  }  
+
   @media(max-width:767px){
+    .is--desktop{
+      display: none;
+    }
+    
+    .is--mobile{
+      display: block;
+    }    
+
     .floating{
       top: 62px !important;
     }
