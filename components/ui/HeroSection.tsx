@@ -9,7 +9,7 @@ export interface VideoProps {
   videoDesktop: LiveVideo;
 
   /** @title Vídeo para Mobile (*) */
-  /** @description (Inserir Vídeo ou imagem com a mesma largura. Ex: 1920px) */
+  /** @description (Inserir Vídeo ou imagem com a mesma largura. Ex: 500px) */
   videoMobile: LiveVideo;
 }
 
