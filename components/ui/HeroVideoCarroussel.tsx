@@ -6,7 +6,7 @@ import { useState } from "preact/hooks";
 import HeroSectionComponent from "deco-sites/perfeitalojan1/components/ui/HeroSection.tsx";
 
 export interface SliderProps {
-  /** @title Intervalo da transição do Slide (*)  */
+  /** @title Intervalo da transição do Slide (*) */
   interval: number;
 }
 
