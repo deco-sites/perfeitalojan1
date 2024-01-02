@@ -102,7 +102,7 @@ function VideoComponent({ media }: { media: VideoProps }) {
           </div>
           )
           : 
-          <div class={`${isMobile && 'is--mobile hidden'} `}>
+          <div class={`${isMobile && 'is--mobile'} `}>
             <Video
               src={media.videoMobile}
               width={150}

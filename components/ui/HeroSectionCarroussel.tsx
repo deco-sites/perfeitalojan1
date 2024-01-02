@@ -8,8 +8,8 @@ import HeroSectionComponent from "deco-sites/perfeitalojan1/components/ui/HeroSe
 export interface SliderProps {
   /** @title Slide infinito?  */
   infinite: boolean;
-  /** @title Intervalo do Slide (*)  */
-  interval: number;
+  /** @title Intervalo do Slide  */
+  interval?: number;
 }
 
 export interface BannerProps { 
