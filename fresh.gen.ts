@@ -10,6 +10,7 @@ import * as $Debug from "./islands/Debug.tsx";
 import * as $HeaderButton from "./islands/HeaderButton.tsx";
 import * as $HeaderModals from "./islands/HeaderModals.tsx";
 import * as $HeaderSearchbar from "./islands/HeaderSearchbar.tsx";
+import * as $HeroSection from "./islands/HeroSection.tsx";
 import * as $HeroSectionCarroussel from "./islands/HeroSectionCarroussel.tsx";
 import * as $Newsletter from "./islands/Newsletter.tsx";
 import * as $NewsletterModal from "./islands/NewsletterModal.tsx";
@@ -38,6 +39,7 @@ const manifest = {
     "./islands/HeaderButton.tsx": $HeaderButton,
     "./islands/HeaderModals.tsx": $HeaderModals,
     "./islands/HeaderSearchbar.tsx": $HeaderSearchbar,
+    "./islands/HeroSection.tsx": $HeroSection,
     "./islands/HeroSectionCarroussel.tsx": $HeroSectionCarroussel,
     "./islands/Newsletter.tsx": $Newsletter,
     "./islands/NewsletterModal.tsx": $NewsletterModal,
