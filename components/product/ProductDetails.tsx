@@ -22,8 +22,8 @@ import ProductSelector from "./ProductVariantSelector.tsx";
 import AddToCartButton from "$store/components/product/AddToCartButton.tsx";
 import ProductButtonFloatingText from "$store/components/ui/ProductButtonFloatingText.tsx";
 import ProductDetailsImages from "$store/components/product/ProductDetailsImage.tsx";
-
 import { HighLight } from "$store/components/product/ProductHighlights.tsx";
+import  ModalImage  from "$store/islands/ModalImage.tsx";
 
 export type Variant = "front-back" | "slider" | "auto";
 
@@ -374,6 +374,12 @@ function Details({
               shareableNetworks={shareableNetworks}
             />
           </div>
+
+          {/* <div class="modal-image-mobile">
+            <div class="close-modal" onClick={closeModalImage}></div>
+            <img />
+          </div> */}
+          <ModalImage />
         </div>
         <SliderJS rootId={id}></SliderJS>
       </>

@@ -3,6 +3,7 @@ import DiscountBadge from "./DiscountBadge.tsx";
 import Image from "apps/website/components/Image.tsx";
 import { useOffer } from "$store/sdk/useOffer.ts";
 import type { ImageObject, Product } from "apps/commerce/types.ts";
+import OpenModalImage from "$store/components/ui/OpenModalImage.tsx";
 
 interface Props {
   images: ImageObject[];
@@ -44,8 +45,9 @@ function ProductDetailsImage({ images, product }: Props) {
 
                     zoomer!.style.backgroundPosition = x + "% " + y + "%";
                   }}
-                  class="overflow-hidden cursor-zoom-in"
+                  class="overflow-hidden cursor-zoom-in relative"
                 >
+                  <OpenModalImage />
                   <Image
                     class="rounded-[10px] transition duration-150 opacity-100  lg:hover:opacity-0 hover:duration-300"
                     sizes="(max-width: 640px) 100vw, 40vw"
@@ -56,7 +58,7 @@ function ProductDetailsImage({ images, product }: Props) {
                     height={HEIGHT}
                     // Preload LCP image for better web vitals
                     preload={index === 0}
-                    loading={index === 0 ? "eager" : "lazy"}
+                    loading={index === 0 ? "eager" : "lazy"}        
                   />
                 </figure>
               </Slider.Item>
