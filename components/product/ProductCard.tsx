@@ -13,7 +13,6 @@ import type { Product } from "apps/commerce/types.ts";
 import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
 import Image from "apps/website/components/Image.tsx";
 import DiscountBadge from "./DiscountBadge.tsx";
-
 import ProductHighlights from "$store/components/product/ProductHighlights.tsx";
 import { HighLight } from "$store/components/product/ProductHighlights.tsx";
 
@@ -184,6 +183,8 @@ function ProductCard(
   const price2: number = price as number;
   const listPrice2: number = listPrice as number;
 
+  const discount = listPrice && price && listPrice > price ? (listPrice - price) : undefined;
+
   return (
     <div
       class={`card card-compact opacity-100 bg-opacity-100 group w-full ${
@@ -310,7 +311,12 @@ function ProductCard(
             </div>
           )}
         {l?.hide.allPrices ? "" : (
-          <div class="flex flex-col mt-2">
+          <div class="flex flex-col mt-2">          
+            { discount &&  
+              <span class="text-[#b51313] font-bold my-1">
+                Econimize: {discount && formatPrice(discount)}
+              </span>
+            }
             <div
               class={`flex items-center gap-2.5 ${
                 l?.basics?.oldPriceSize === "Normal" ? "lg:flex-row" : ""
