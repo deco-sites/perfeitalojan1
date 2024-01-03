@@ -88,6 +88,11 @@ function ProductInfo(
     offers,
   );
 
+  let stock;
+  if( offers ){
+    stock = offers.offers[0].inventoryLevel.value;
+  }
+
   return (
     <>
       <div class="floating bg-[#2F1893] w-full h-[80px] fixed left-0 top-[80px] z-20 container-floating is-hidden">
@@ -136,8 +141,12 @@ function ProductInfo(
           </span>
         </div>
       </div>
+      {/* Quantidade em estoque */}
+      <div class={`mt-3 ${stock && stock <= 10 ? 'text-orange-400' : 'text-current' }`}>
+        { stock && (`Quantidade em estoque: ${stock}`)}
+      </div>      
       {/* Prices */}
-      <div class="mt-5">
+      <div class="mt-3">
         <div class="flex flex-row gap-2 items-center">
           {listPrice !== price && (
             <span class="line-through text-base-300 text-xs">
