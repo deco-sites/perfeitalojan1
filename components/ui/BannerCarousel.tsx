@@ -62,6 +62,8 @@ export interface Props {
    * @description Check this option when this banner is the biggest image on the screen for image optimizations
    */
   preload?: boolean;
+  /**@title Desabilitar Banner? */
+  activeBanner?: boolean;
   /**
    * @title Autoplay interval
    * @description time (in seconds) to start the carousel autoplay
@@ -249,7 +251,7 @@ function Buttons({ className }: ButtonsProps) {
 }
 
 function BannerCarousel(
-  { images, preload, interval, showPaginationArrows, showPaginationDots }:
+  { images, preload, interval, showPaginationArrows, showPaginationDots, activeBanner }:
     Props,
 ) {
   const id = useId();
@@ -257,7 +259,7 @@ function BannerCarousel(
   return (
     <div
       id={id}
-      class="grid grid-cols-[48px_1fr_48px] sm:grid-cols-[120px_1fr_120px] grid-rows-[1fr_48px_1fr_64px]"
+      class={`${activeBanner ? 'hidden' : ''} grid grid-cols-[48px_1fr_48px] sm:grid-cols-[120px_1fr_120px] grid-rows-[1fr_48px_1fr_64px]`}
     >
       <Slider class="carousel carousel-center w-full col-span-full row-span-full scrollbar-none gap-6">
         {images?.map((image, index) => (
