@@ -127,10 +127,6 @@
       display: block;
     }    
 
-    .floating{
-      top: 62px !important;
-    }
-
     .floating__container{
       max-width: 95% !important;
     }

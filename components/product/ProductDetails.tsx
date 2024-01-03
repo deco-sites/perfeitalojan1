@@ -95,7 +95,7 @@ function ProductInfo(
 
   return (
     <>
-      <div class="floating bg-[#2F1893] w-full h-[80px] fixed left-0 top-[80px] z-20 container-floating is-hidden">
+      <div class="floating bg-[#2F1893] w-full h-[80px] fixed left-0 bottom-0 z-20 container-floating is-hidden">
         <div class="floating__container grid grid-cols-9 grid-rows-none h-full items-center max-w-[80%] item-floating my-0 mx-auto">
           <ProductButtonFloatingText product={product} />
           <div class="floating__price col-[5/7] flex flex-col text-right">
