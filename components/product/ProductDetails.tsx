@@ -355,7 +355,7 @@ function Details({
         />
         <div
           id={id}
-          class="flex flex-col lg:flex-row gap-4 lg:justify-center"
+          class="product-image-gallery flex flex-col lg:flex-row gap-4 lg:justify-center"
         >
           {/* Product Images */}
           <ProductDetailsImages
