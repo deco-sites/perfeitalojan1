@@ -22,8 +22,8 @@ import ProductSelector from "./ProductVariantSelector.tsx";
 import AddToCartButton from "$store/components/product/AddToCartButton.tsx";
 import ProductButtonFloatingText from "$store/components/ui/ProductButtonFloatingText.tsx";
 import ProductDetailsImages from "$store/components/product/ProductDetailsImage.tsx";
-
 import { HighLight } from "$store/components/product/ProductHighlights.tsx";
+import  ModalImage  from "$store/islands/ModalImage.tsx";
 
 export type Variant = "front-back" | "slider" | "auto";
 
@@ -95,7 +95,7 @@ function ProductInfo(
 
   return (
     <>
-      <div class="floating bg-[#2F1893] w-full h-[80px] fixed left-0 top-[80px] z-20 container-floating is-hidden">
+      <div class="floating bg-[#2F1893] w-full h-[80px] fixed left-0 bottom-0 z-20 container-floating is-hidden">
         <div class="floating__container grid grid-cols-9 grid-rows-none h-full items-center max-w-[80%] item-floating my-0 mx-auto">
           <ProductButtonFloatingText product={product} />
           <div class="floating__price col-[5/7] flex flex-col text-right">
@@ -355,7 +355,7 @@ function Details({
         />
         <div
           id={id}
-          class="flex flex-col lg:flex-row gap-4 lg:justify-center"
+          class="product-image-gallery flex flex-col lg:flex-row gap-4 lg:justify-center"
         >
           {/* Product Images */}
           <ProductDetailsImages
@@ -374,6 +374,12 @@ function Details({
               shareableNetworks={shareableNetworks}
             />
           </div>
+
+          {/* <div class="modal-image-mobile">
+            <div class="close-modal" onClick={closeModalImage}></div>
+            <img />
+          </div> */}
+          <ModalImage />
         </div>
         <SliderJS rootId={id}></SliderJS>
       </>

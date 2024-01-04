@@ -12,6 +12,7 @@ import * as $HeaderModals from "./islands/HeaderModals.tsx";
 import * as $HeaderSearchbar from "./islands/HeaderSearchbar.tsx";
 import * as $HeroSection from "./islands/HeroSection.tsx";
 import * as $HeroVideoCarroussel from "./islands/HeroVideoCarroussel.tsx";
+import * as $ModalImage from "./islands/ModalImage.tsx";
 import * as $Newsletter from "./islands/Newsletter.tsx";
 import * as $NewsletterModal from "./islands/NewsletterModal.tsx";
 import * as $OutOfStock from "./islands/OutOfStock.tsx";
@@ -41,6 +42,7 @@ const manifest = {
     "./islands/HeaderSearchbar.tsx": $HeaderSearchbar,
     "./islands/HeroSection.tsx": $HeroSection,
     "./islands/HeroVideoCarroussel.tsx": $HeroVideoCarroussel,
+    "./islands/ModalImage.tsx": $ModalImage,
     "./islands/Newsletter.tsx": $Newsletter,
     "./islands/NewsletterModal.tsx": $NewsletterModal,
     "./islands/OutOfStock.tsx": $OutOfStock,

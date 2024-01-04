@@ -103,7 +103,7 @@ function Footer(
   }: Props,
 ) {
   return (
-    <footer class="">
+    <footer class="footer-container">
       <div class="bg-white flex flex-col">
         <div class="flex items-start justify-start gap-8 mt-12 max-lg:flex-col">
           <div class="pt-11 px-8 pb-10 max-lg:w-full bg-[#F7F7F7] rounded-[10px]">
