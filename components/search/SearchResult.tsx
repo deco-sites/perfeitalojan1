@@ -15,6 +15,8 @@ import SearchResultsGridChoice from "$store/islands/SearchResultsGridChoice.tsx"
 import type { HighLight } from "$store/components/product/ProductHighlights.tsx";
 
 export interface Props {
+  /** @title Tipo de Paginação (*) */
+  // typePagination: "Paginação" | "Carregar mais";
   page: LoaderReturnType<ProductListingPage | null>;
   /**
    * @description Flags, exibidos quando os produtos são encontrados
@@ -34,6 +36,7 @@ function Result({
   page,
   variant,
   highlights,
+  // typePagination
 }: Omit<Omit<Props, "page">, "notFoundSection"> & {
   page: ProductListingPage;
 }) {
@@ -83,6 +86,8 @@ function Result({
             </div>
             <div class="flex-grow">
               <ProductGallery products={products} highlights={highlights} />
+              {/* Em aberto para criar a feature de carregar mais produtos */}
+              {/* { typePagination === 'Paginação' ? ( <SearchPagination pageInfo={pageInfo} /> ) : "Carregar Mais" } */}
               <SearchPagination pageInfo={pageInfo} />
             </div>
           </div>
