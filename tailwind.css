@@ -97,7 +97,7 @@
     animation: loading 1s infinite;
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 45%;
   }
 
   @keyframes loading {
