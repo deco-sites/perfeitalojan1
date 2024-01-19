@@ -1,5 +1,6 @@
 import Loading from "$store/components/ui/Loading.tsx";
 import Modal from "$store/components/ui/Modal.tsx";
+import QuickShopMobileMenu from "$store/components/quickShop/QuickShopMobileMenu.tsx";
 import { useUI } from "$store/sdk/useUI.ts";
 import { lazy, Suspense } from "preact/compat";
 
@@ -42,6 +43,8 @@ function Modals({ menu, minicart }: Props) {
           <Menu {...menu} />
         </Suspense>
       </Modal>
+
+      <QuickShopMobileMenu />
 
       <Modal
         class="ml-auto"

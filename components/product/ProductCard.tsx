@@ -1,20 +1,18 @@
-import {
-  BUTTON_VARIANTS,
-  ButtonVariant,
-} from "$store/components/minicart/Cart.tsx";
+import {BUTTON_VARIANTS,ButtonVariant} from "$store/components/minicart/Cart.tsx";
+import { inStock, useOffer } from "$store/sdk/useOffer.ts";
 import Avatar from "$store/components/ui/Avatar.tsx";
 import AddToCartButton from "$store/islands/AddToCartButton.tsx";
 import WishlistIcon from "$store/islands/WishlistButton.tsx";
 import { sendEventOnClick } from "$store/sdk/analytics.tsx";
 import { formatPrice } from "$store/sdk/format.ts";
-import { useOffer } from "$store/sdk/useOffer.ts";
-import { useVariantPossibilities } from "$store/sdk/useVariantPossiblities.ts";
+import { useVariantPossibilities, useVariations } from "$store/sdk/useVariantPossiblities.ts";
 import type { Product } from "apps/commerce/types.ts";
 import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
 import Image from "apps/website/components/Image.tsx";
 import DiscountBadge from "./DiscountBadge.tsx";
 import ProductHighlights from "$store/components/product/ProductHighlights.tsx";
 import { HighLight } from "$store/components/product/ProductHighlights.tsx";
+import QuickShop from "$store/islands/QuickShop.tsx";
 
 export interface Layout {
   basics?: {
@@ -80,9 +78,7 @@ export const relative = (url: string) => {
 const WIDTH = 279;
 const HEIGHT = 270;
 
-function ProductCard(
-  { product, preload, itemListName, layout, highlights }: Props,
-) {
+function ProductCard({ product, preload, itemListName, layout, highlights, device = "desktop", }: Props & { device: string } ) {
   const {
     url,
     productID,
@@ -184,6 +180,8 @@ function ProductCard(
   const listPrice2: number = listPrice as number;
 
   const discount = listPrice && price && listPrice > price ? (listPrice - price) : undefined;
+
+  const { productVariations } = useVariations(product);  
 
   return (
     <div
@@ -359,6 +357,26 @@ function ProductCard(
               </ul>
             )}
           </>
+        )}
+
+        {isVariantOf && (
+          <QuickShop
+            sellerId={seller}
+            productInfo={{
+              size: productVariations.get("Tamanho")?.map((i) => ({
+                content: i.property.value!,
+                url: i.item.url!,
+                disabled: !inStock(i.item.offers),
+              })),
+              name: product.isVariantOf?.name,
+                offersMobile: {
+                seller,
+                price,
+                listPrice,
+                priceCurrency: offers!.priceCurrency!,
+              },
+            }}
+          />
         )}
 
         <div

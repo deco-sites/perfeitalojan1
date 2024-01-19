@@ -45,8 +45,11 @@ const installmentToString = (
   return `${billingDuration}x de R$ ${billingIncrement}`;
 };
 
+const bestOffer = (aggregateOffer?: AggregateOffer) => aggregateOffer?.offers[0];
+export const inStock = (offer?: AggregateOffer) => bestOffer(offer)?.availability === "https://schema.org/InStock";
+
 export const useOffer = (aggregateOffer?: AggregateOffer) => {
-  const offer = aggregateOffer?.offers[0];
+  const offer = bestOffer(aggregateOffer);
   const listPrice = offer?.priceSpecification.find((spec) =>
     spec.priceType === "https://schema.org/ListPrice"
   );

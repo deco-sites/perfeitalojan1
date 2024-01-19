@@ -35,7 +35,8 @@ export default function HeroVideoCarroussel({banner,slider,isHeaderTransparent,}
   };
 
   const nextBanner = () => {
-    const element = document?.querySelector<HTMLElement>('.custom-banner-slide.is-init');
+    // @ts-ignore: Ignorando erro
+    const element = document.querySelector<HTMLElement>('.custom-banner-slide.is-init');
     const elementLoading = document.querySelector<HTMLElement>('.loading-container');
     if( element ){
       const video = element.querySelector('section .block video');
