@@ -2,6 +2,7 @@
 // This file SHOULD be checked into source version control.
 // This file is automatically updated during development when running `dev.ts`.
 
+import * as $$$0 from "./loaders/plp.ts";
 import * as $$$$$$0 from "./sections/Category/CategoryBanner.tsx";
 import * as $$$$$$1 from "./sections/Category/CategoryBreadcrumb.tsx";
 import * as $$$$$$2 from "./sections/Category/CategoryList.tsx";
@@ -46,6 +47,9 @@ import * as $$$$$$$$$$$0 from "./apps/decohub.ts";
 import * as $$$$$$$$$$$1 from "./apps/site.ts";
 
 const manifest = {
+  "loaders": {
+    "deco-sites/perfeitalojan1/loaders/plp.ts": $$$0,
+  },
   "sections": {
     "deco-sites/perfeitalojan1/sections/Category/CategoryBanner.tsx": $$$$$$0,
     "deco-sites/perfeitalojan1/sections/Category/CategoryBreadcrumb.tsx":

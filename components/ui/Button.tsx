@@ -2,8 +2,6 @@ import { forwardRef } from "preact/compat";
 import { AvailableIcons, PaymentIcons, SocialIcons } from "./Icon.tsx";
 import type { ComponentType, JSX } from "preact";
 
-import Spinner from "./Spinner.tsx";
-
 export type Props =
   & Omit<JSX.IntrinsicElements["button"], "loading">
   & {

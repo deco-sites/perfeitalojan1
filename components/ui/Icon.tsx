@@ -8,6 +8,7 @@ export type PaymentIcons =
   | "Visa"
   | "Pix"
   | "AmericanExpress"
+  | "Dot"
   | "Boleto";
 
 export type SocialIcons =
@@ -55,6 +56,7 @@ export type AvailableIcons =
   | "ArrowsPointingOut"
   | "checkIcon"
   | "SearchBar"
+  | "CheckMark"
   | "ArrowRight";
 
 interface Props extends JSX.SVGAttributes<SVGSVGElement> {

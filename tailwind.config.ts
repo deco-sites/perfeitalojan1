@@ -19,6 +19,7 @@ export default {
         "slide-right": "slide-right-frame 0.4s ease normal",
         "slide-bottom": "slide-bottom-frame 0.4s ease normal",
         progress: "progress-frame ease normal",
+        draw: "draw-frame 0.3s ease forwards",
       },
       keyframes: {
         "slide-left-frame": {
@@ -41,6 +42,14 @@ export default {
             "--dot-progress": "100%",
           },
         },
+        "draw-frame": {
+          to: {
+            opacity: "1",
+            "stroke-width": "3",
+            "stroke-dashoffset": "162.6",
+            "stroke-dasharray": "0 162.6 28 134.6",
+          },
+        },        
       },
     },
     screens: {

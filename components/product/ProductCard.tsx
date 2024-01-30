@@ -1,7 +1,4 @@
-import {
-  BUTTON_VARIANTS,
-  ButtonVariant,
-} from "$store/components/minicart/Cart.tsx";
+import {BUTTON_VARIANTS,ButtonVariant} from "$store/components/minicart/Cart.tsx";
 import Avatar from "$store/components/ui/Avatar.tsx";
 import AddToCartButton from "$store/islands/AddToCartButton.tsx";
 import WishlistIcon from "$store/islands/WishlistButton.tsx";
@@ -80,17 +77,8 @@ export const relative = (url: string) => {
 const WIDTH = 279;
 const HEIGHT = 270;
 
-function ProductCard(
-  { product, preload, itemListName, layout, highlights }: Props,
-) {
-  const {
-    url,
-    productID,
-    name,
-    image: images,
-    offers,
-    isVariantOf,
-  } = product;
+function ProductCard({ product, preload, itemListName, layout, highlights }: Props) {
+  const {url,productID,name,image: images,offers,isVariantOf} = product;
   const productGroupID = isVariantOf?.productGroupID;
   const [front, back] = images ?? [];
   const { listPrice, price, installment, seller } = useOffer(offers);
@@ -110,10 +98,7 @@ function ProductCard(
     },
   };
   const l = layout;
-  const align =
-    !l?.basics?.contentAlignment || l?.basics?.contentAlignment == "Left"
-      ? "left"
-      : "center";
+  const align = !l?.basics?.contentAlignment || l?.basics?.contentAlignment == "Left" ? "left": "center";
   const skuSelector = variants.map(([value, { urls }]) => (
     <li>
       <a href={urls[0]}>
@@ -194,10 +179,7 @@ function ProductCard(
       id={`product-card-${productID}`}
       {...sendEventOnClick(clickEvent)}
     >
-      <figure
-        class="relative rounded-lg"
-        style={{ aspectRatio: `${WIDTH} / ${HEIGHT}` }}
-      >
+      <figure class="relative rounded-lg" style={{ aspectRatio: `${WIDTH} / ${HEIGHT}` }}>
         {/* Wishlist button */}
         <div
           class={`absolute top-2 z-10
@@ -215,11 +197,7 @@ function ProductCard(
         >
           <WishlistIcon productGroupID={productGroupID} productID={productID} />
         </div>
-        <a
-          href={url && relative(url)}
-          aria-label="view product"
-          class="contents relative"
-        >
+        <a href={url && relative(url)} aria-label="view product" class="contents relative">
           {listPrice2 !== price2 && (
             <DiscountBadge
               price={price2}

@@ -1,12 +1,6 @@
-import type {
-  AggregateOffer,
-  UnitPriceSpecification,
-} from "apps/commerce/types.ts";
+import type {AggregateOffer,UnitPriceSpecification} from "apps/commerce/types.ts";
 
-const bestInstallment = (
-  acc: UnitPriceSpecification | null,
-  curr: UnitPriceSpecification,
-) => {
+const bestInstallment = (acc: UnitPriceSpecification | null,curr: UnitPriceSpecification) => {
   if (curr.priceComponentType !== "https://schema.org/Installment") {
     return acc;
   }
@@ -33,9 +27,7 @@ const bestInstallment = (
   return acc;
 };
 
-const installmentToString = (
-  installment: UnitPriceSpecification,
-) => {
+const installmentToString = (installment: UnitPriceSpecification) => {
   const { billingDuration, billingIncrement } = installment;
 
   if (!billingDuration || !billingIncrement) {
@@ -60,9 +52,7 @@ export const useOffer = (aggregateOffer?: AggregateOffer) => {
     listPrice: listPrice?.price,
     availability,
     seller,
-    installments: installment && price
-      ? installmentToString(installment)
-      : null,
+    installments: installment && price ? installmentToString(installment) : null,
     installment,
   };
 };
