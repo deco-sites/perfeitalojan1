@@ -12,12 +12,10 @@ export interface Props {
   highlights?: HighLight[];
 }
 
-function ProductGallery({ products, highlights, device }: Props  & { device: string }) {
+function ProductGallery({ products, highlights }: Props) {
   const gridCols = computed(() => gridColsSignal.value);
   return (
-    <div
-      class={`column-selector__container items-baseline grid grid-cols-${gridCols.value.mobile} gap-2 lg:grid-cols-${gridCols.value.desktop} lg:gap-[30px]`}
-    >
+    <div class={`column-selector__container grid grid-cols-${gridCols.value.mobile} gap-2 items-center lg:grid-cols-${gridCols.value.desktop} lg:gap-[30px]`}>
       {products?.map((product, index) => (
         <ProductCard
           product={product}
@@ -28,7 +26,6 @@ function ProductGallery({ products, highlights, device }: Props  & { device: str
             basics: { contentAlignment: "Center" },
           }}
           highlights={highlights}
-          device={device}
         />
       ))}
     </div>
