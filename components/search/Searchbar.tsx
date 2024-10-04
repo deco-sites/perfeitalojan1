@@ -9,14 +9,14 @@
  * no JavaScript is shipped to the browser!
  */
 
-import type { Layout as CardLayout } from "$store/components/product/ProductCard.tsx";
-import ProductCard from "$store/components/product/ProductCard.tsx";
-import Button from "$store/components/ui/Button.tsx";
-import Icon from "$store/components/ui/Icon.tsx";
-import Slider from "$store/components/ui/Slider.tsx";
-import Spinner from "$store/components/ui/Spinner.tsx";
-import { sendEvent } from "$store/sdk/analytics.tsx";
-import { useUI } from "$store/sdk/useUI.ts";
+import type { Layout as CardLayout } from "../product/ProductCard.tsx";
+import ProductCard from "../product/ProductCard.tsx";
+import Button from "../ui/Button.tsx";
+import Icon from "../ui/Icon.tsx";
+import Slider from "../ui/Slider.tsx";
+import Spinner from "../ui/Spinner.tsx";
+import { sendEvent } from "../../sdk/analytics.tsx";
+import { useUI } from "../../sdk/useUI.ts";
 import { useAutocomplete } from "apps/vtex/hooks/useAutocomplete.ts";
 import { useEffect, useRef } from "preact/compat";
 

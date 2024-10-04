@@ -1,4 +1,4 @@
-import Icon from "$store/components/ui/Icon.tsx";
+import Icon from "../ui/Icon.tsx";
 import Button from "../ui/Button.tsx";
 
 interface Props {

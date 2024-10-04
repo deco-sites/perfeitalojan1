@@ -1,5 +1,5 @@
-import Icon from "$store/components/ui/Icon.tsx";
-import { useUI } from "$store/sdk/useUI.ts";
+import Icon from "../../components/ui/Icon.tsx";
+import { useUI } from "../../sdk/useUI.ts";
 import type { INavItem } from "./NavItem.tsx";
 export interface Props {
   items: INavItem[];

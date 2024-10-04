@@ -1,7 +1,7 @@
-import Button from "$store/components/ui/Button.tsx";
-import Icon from "$store/components/ui/Icon.tsx";
-import { sendEvent } from "$store/sdk/analytics.tsx";
-import { useUI } from "$store/sdk/useUI.ts";
+import Button from "../ui/Button.tsx";
+import Icon from "../ui/Icon.tsx";
+import { sendEvent } from "../../sdk/analytics.tsx";
+import { useUI } from "../../sdk/useUI.ts";
 import { useCart } from "apps/vtex/hooks/useCart.ts";
 
 function SearchButton() {

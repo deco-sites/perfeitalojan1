@@ -6,7 +6,7 @@ import {
   ALIGN_VERTICAL,
   GRID_ROW_HORIZONTAL,
   ColumnStart,
-} from "$store/components/product/ProductHighlights.tsx";
+} from "../product/ProductHighlights.tsx";
 
 type Props = {
   price: number;

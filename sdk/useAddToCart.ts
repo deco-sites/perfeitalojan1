@@ -1,8 +1,8 @@
 import { useSignal } from "@preact/signals";
 import { useCallback } from "preact/hooks";
 import { useCart } from "apps/vtex/hooks/useCart.ts";
-import { useUI } from "deco-sites/fashion/sdk/useUI.ts";
-import { sendEvent } from "deco-sites/fashion/sdk/analytics.tsx";
+import { useUI } from "../sdk/useUI.ts";
+import { sendEvent } from "../sdk/analytics.tsx";
 
 export interface Options {
   skuId: string;

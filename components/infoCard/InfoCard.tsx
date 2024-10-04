@@ -1,5 +1,5 @@
-import type { SocialIcons } from "$store/components/ui/Icon.tsx";
-import Icon from "$store/components/ui/Icon.tsx";
+import type { SocialIcons } from "../ui/Icon.tsx";
+import Icon from "../ui/Icon.tsx";
 
 export type TextAlign = "Left" | "Center" | "Right" | "Justify";
 

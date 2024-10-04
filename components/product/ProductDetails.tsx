@@ -1,29 +1,27 @@
 import { useId } from "preact/hooks";
-import ShippingSimulation from "$store/islands/ShippingSimulation.tsx";
-import Breadcrumb from "$store/components/ui/Breadcrumb.tsx";
-import Button from "$store/components/ui/Button.tsx";
+import ShippingSimulation from "../../islands/ShippingSimulation.tsx";
+import Breadcrumb from "../ui/Breadcrumb.tsx";
+import Button from "../ui/Button.tsx";
 import Image from "apps/website/components/Image.tsx";
-import Slider from "$store/components/ui/Slider.tsx";
-import SliderJS from "$store/islands/SliderJS.tsx";
-import OutOfStock from "$store/islands/OutOfStock.tsx";
-import { useOffer } from "$store/sdk/useOffer.ts";
-import { formatPrice } from "$store/sdk/format.ts";
-import { SendEventOnLoad } from "$store/sdk/analytics.tsx";
+import SliderJS from "../../islands/SliderJS.tsx";
+import OutOfStock from "../../islands/OutOfStock.tsx";
+import { useOffer } from "../../sdk/useOffer.ts";
+import { formatPrice } from "../../sdk/format.ts";
+import { SendEventOnLoad } from "../../sdk/analytics.tsx";
 import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
 import type { ProductDetailsPage } from "apps/commerce/types.ts";
-import type { LoaderReturnType } from "$live/types.ts";
-import AddToCartActions from "$store/islands/AddToCartActions.tsx";
-import Icon from "$store/components/ui/Icon.tsx";
-import { getShareLink } from "$store/sdk/shareLinks.tsx";
+import { type LoaderReturnType } from "@deco/deco";
+import AddToCartActions from "../../islands/AddToCartActions.tsx";
+import Icon from "../ui/Icon.tsx";
+import { getShareLink } from "../../sdk/shareLinks.tsx";
 
-import DiscountBadge from "./DiscountBadge.tsx";
 import ProductSelector from "./ProductVariantSelector.tsx";
 
-import AddToCartButton from "$store/components/product/AddToCartButton.tsx";
-import ProductButtonFloatingText from "$store/components/ui/ProductButtonFloatingText.tsx";
-import ProductDetailsImages from "$store/components/product/ProductDetailsImage.tsx";
-import { HighLight } from "$store/components/product/ProductHighlights.tsx";
-import  ModalImage  from "$store/islands/ModalImage.tsx";
+import AddToCartButton from "../product/AddToCartButton.tsx";
+import ProductButtonFloatingText from "../ui/ProductButtonFloatingText.tsx";
+import ProductDetailsImages from "../product/ProductDetailsImage.tsx";
+import { HighLight } from "../product/ProductHighlights.tsx";
+import  ModalImage  from "../../islands/ModalImage.tsx";
 
 export type Variant = "front-back" | "slider" | "auto";
 

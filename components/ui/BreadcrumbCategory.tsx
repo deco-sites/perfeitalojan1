@@ -1,6 +1,5 @@
-import Breadcrumb from "$store/components/ui/Breadcrumb.tsx";
-
-import type { LoaderReturnType } from "$live/types.ts";
+import Breadcrumb from "../ui/Breadcrumb.tsx";
+import { type LoaderReturnType } from "@deco/deco";
 import type { ProductListingPage } from "apps/commerce/types.ts";
 
 export interface Props {

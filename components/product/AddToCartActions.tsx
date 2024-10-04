@@ -1,6 +1,6 @@
-import QuantitySelector from "$store/components/ui/QuantitySelector.tsx";
+import QuantitySelector from "../ui/QuantitySelector.tsx";
 import { useState } from "preact/hooks";
-import AddToCartButton from "$store/components/product/AddToCartButton.tsx";
+import AddToCartButton from "../product/AddToCartButton.tsx";
 
 type Props = {
   productID: string;

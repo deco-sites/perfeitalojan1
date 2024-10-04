@@ -1,5 +1,5 @@
-import type { SectionProps } from "$live/mod.ts";
-import Icon from "$store/components/ui/Icon.tsx";
+import { type SectionProps } from "@deco/deco";
+import Icon from "../ui/Icon.tsx";
 
 export interface Props {
   menuItems: {

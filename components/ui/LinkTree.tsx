@@ -1,6 +1,6 @@
-import { Image as LiveImage } from "deco-sites/std/components/types.ts";
+import { Image as LiveImage } from "../../components/types.ts";
 import Image from "apps/website/components/Image.tsx";
-import Icon from "$store/components/ui/Icon.tsx";
+import Icon from "../ui/Icon.tsx";
 
 export interface Link {
   label: string;

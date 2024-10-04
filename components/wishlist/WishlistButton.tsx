@@ -1,6 +1,6 @@
 import { useComputed, useSignal } from "@preact/signals";
-import Icon from "$store/components/ui/Icon.tsx";
-import Button from "$store/components/ui/Button.tsx";
+import Icon from "../ui/Icon.tsx";
+import Button from "../ui/Button.tsx";
 import { useWishlist } from "apps/vtex/hooks/useWishlist.ts";
 import { useUser } from "apps/vtex/hooks/useUser.ts";
 
@@ -16,7 +16,7 @@ function WishlistButton({
   productID,
 }: Props) {
   const { user } = useUser();
-  const item = { sku: productID, productId: productGroupID };
+  const item = { sku: productID, productId: productGroupID || "" };
   const { loading, addItem, removeItem, getItem } = useWishlist();
   const listItem = useComputed(() => getItem(item));
   const fetching = useSignal(false);

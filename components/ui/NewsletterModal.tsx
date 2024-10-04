@@ -1,16 +1,16 @@
-import type { SectionProps } from "$live/types.ts";
+import { type SectionProps } from "@deco/deco";
 import {
   BUTTON_VARIANTS,
   ButtonVariant,
-} from "$store/components/minicart/Cart.tsx";
-import Icon from "$store/components/ui/Icon.tsx";
-import { Runtime } from "$store/runtime.ts";
+} from "../minicart/Cart.tsx";
+import Icon from "../ui/Icon.tsx";
+import { Runtime } from "../../runtime.ts";
 import { useSignal } from "@preact/signals";
 import type { JSX } from "preact";
 import { useEffect, useRef } from "preact/compat";
 import { getCookies } from "std/http/mod.ts";
 const subscribe = Runtime.create(
-  "deco-sites/std/actions/vtex/newsletter/subscribe.ts",
+  "../../actions/vtex/newsletter/subscribe.ts",
 );
 
 export interface INewsletterInputProps {

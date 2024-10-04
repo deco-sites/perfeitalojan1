@@ -1,6 +1,6 @@
-import type { Video as LiveVideo } from "deco-sites/std/components/types.ts";
+import type { Video as LiveVideo } from "../../components/types.ts";
 import Video from "apps/website/components/Video.tsx";
-import type { HTML } from "deco-sites/std/components/types.ts";
+import type { HTML } from "../../components/types.ts";
 import useMedia from "../../sdk/useMedia.ts";
 
 export interface VideoProps {

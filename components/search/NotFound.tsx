@@ -1,6 +1,6 @@
-import type { SectionProps } from "$live/mod.ts";
-import Icon from "$store/components/ui/Icon.tsx";
-import Searchbar from "$store/components/search/Searchbar.tsx";
+import { type SectionProps } from "@deco/deco";
+import Icon from "../ui/Icon.tsx";
+import Searchbar from "../search/Searchbar.tsx";
 
 export interface Props {
   /**

@@ -1,34 +1,33 @@
 import { useSignal } from "@preact/signals";
-import { Runtime } from "$store/runtime.ts";
+import { Runtime } from "../../runtime.ts";
 import type { Product } from "apps/commerce/types.ts";
-import type { JSX } from "preact";
-import Button from "$store/components/ui/Button.tsx";
+import Button from "../ui/Button.tsx";
 
 interface Props {
   productID: Product["productID"];
 }
 
-const notifyme = Runtime.create("deco-sites/std/actions/vtex/notifyme.ts");
+const notifyme = Runtime.create("../../actions/vtex/notifyme.ts");
 
 function Notify({ productID }: Props) {
   const loading = useSignal(false);
 
-  const handleSubmit: JSX.GenericEventHandler<HTMLFormElement> = async (e) => {
+  const handleSubmit = async (e: Event) => {
     e.preventDefault();
-
+  
     try {
       loading.value = true;
-
-      const name = (e.currentTarget.elements.namedItem("name") as RadioNodeList)
-        ?.value;
-      const email =
-        (e.currentTarget.elements.namedItem("email") as RadioNodeList)?.value;
-
+  
+      const form = e.currentTarget as HTMLFormElement;
+      const name = (form.elements.namedItem("name") as HTMLInputElement)?.value;
+      const email = (form.elements.namedItem("email") as HTMLInputElement)?.value;
+  
       await notifyme({ skuId: productID, name, email });
     } finally {
       loading.value = false;
     }
   };
+  
 
   return (
     <form

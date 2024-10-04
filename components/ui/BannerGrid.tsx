@@ -1,5 +1,5 @@
-import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
-import Icon from "$store/components/ui/Icon.tsx";
+import type { Image as LiveImage } from "../../components/types.ts";
+import Icon from "../ui/Icon.tsx";
 
 export type SemanticColors =
   | "primary"

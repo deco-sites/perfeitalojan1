@@ -1,13 +1,13 @@
 import {
   BUTTON_VARIANTS,
   ButtonVariant,
-} from "$store/components/minicart/Cart.tsx";
-import Button from "$store/components/ui/Button.tsx";
-import Icon from "$store/components/ui/Icon.tsx";
-import Slider from "$store/components/ui/Slider.tsx";
-import SliderJS from "$store/islands/SliderJS.tsx";
+} from "../minicart/Cart.tsx";
+import Button from "../ui/Button.tsx";
+import Icon from "../ui/Icon.tsx";
+import Slider from "../ui/Slider.tsx";
+import SliderJS from "../../islands/SliderJS.tsx";
 import { Picture, Source } from "apps/website/components/Picture.tsx";
-import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
+import type { Image as LiveImage } from "../../components/types.ts";
 import { useId } from "preact/hooks";
 
 export type BannerFontSizes = "Small" | "Medium" | "Large";
