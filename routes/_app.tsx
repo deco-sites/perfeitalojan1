@@ -1,6 +1,6 @@
 import { AppProps } from "$fresh/server.ts";
-import GlobalTags from "../../GlobalTags.tsx";
-import DesignSystem from "$store/sections/DesignSystem/DesignSystem.tsx";
+import GlobalTags from "../components/GlobalTags.tsx";
+import DesignSystem from "../sections/DesignSystem/DesignSystem.tsx";
 
 function App(props: AppProps) {
   return (
