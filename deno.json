@@ -1,6 +1,6 @@
 {
   "imports": {
-    "deco-sites/perfeitalojan1/": "./",
+    "site/": "./",
     "deco-sites/fashion/": "./",
     "$store/": "./",
     "deco-sites/std/": "https://denopkg.com/deco-sites/std@1.22.11/",
