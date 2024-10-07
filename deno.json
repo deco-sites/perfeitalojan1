@@ -8,6 +8,7 @@
     "@preact/signals": "https://esm.sh/*@preact/signals@1.2.2",
     "@preact/signals-core": "https://esm.sh/*@preact/signals-core@1.5.1",
     "std/": "https://deno.land/std@0.190.0/",
+    "$live/": "https://denopkg.com/deco-cx/deco@1.79.3/",
     "daisyui": "npm:daisyui@4.6.0",
     "@cliffy/prompt": "jsr:@cliffy/prompt@^1.0.0-rc.5",
     "@core/asyncutil": "jsr:@core/asyncutil@^1.0.0",
@@ -40,8 +41,8 @@
     "@deco/dev": "jsr:@deco/dev@1.104.0"
   },
   "tasks": {
-    "local": "appKey=vtexappkey-lojabagaggio-ULLGYX appToken=DDBJRCQRBOIKMYNSZGENSOHARJKWVQYVDIYPMQHWIAGIOEDCCNZZXGXDSTQZOTEPWMVROFNHDXVIALHOEGXGJBNTSHABVCPOKAUXKMVCOQGXRQGKWANUADXKUXHVHRQL DECO_SITE_NAME=lojabagaggio DECO_ENV_NAME=thiago-pereira deno task start",
-    "start": "deno run -A --unstable-http --env https://deco.cx/run -- deno task dev",
+    "local": "DECO_SITE_NAME=perfeitalojan1 DECO_ENV_NAME=murilo-ferreira deno task start",
+    "start": "deno task bundle && deno run -A --unstable --watch=static/sw.js,tailwind.css,sections/,functions/,loaders/,actions/,workflows/,accounts/ dev.ts",
     "gen": "deno run -A dev.ts --gen-only",
     "play": "USE_LOCAL_STORAGE_ONLY=true deno task start",
     "component": "deno eval 'import \"deco/scripts/component.ts\"'",

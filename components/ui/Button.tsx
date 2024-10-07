@@ -12,7 +12,6 @@ export type Props =
     type?: string;
   };
 
-
 const Button = forwardRef<HTMLButtonElement, Props>(({
   as = "button",
   type = "button",
@@ -23,16 +22,16 @@ const Button = forwardRef<HTMLButtonElement, Props>(({
   iconId,
   ...props
 }, ref) => (
-    <button
-      {...props}
-      className={`rounded-full border-2 border-solid no-animation ${_class}`}
-      disabled={disabled || loading}
-      type={type}
-      ref={ref}
-    >
-      {loading ? <span class="loading loading-spinner" /> : children}
-    </button>
-  ));
+  <button
+    {...props}
+    className={`rounded-full border-2 border-solid no-animation ${_class}`}
+    disabled={disabled || loading}
+    type={type}
+    ref={ref}
+  >
+    {loading ? <span class="loading loading-spinner" /> : children}
+  </button>
+));
 
 // }, ref) => (
 //   <button

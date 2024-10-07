@@ -1,7 +1,4 @@
-import {
-  BUTTON_VARIANTS,
-  ButtonVariant,
-} from "../minicart/Cart.tsx";
+import { BUTTON_VARIANTS, ButtonVariant } from "../minicart/Cart.tsx";
 import Button from "../ui/Button.tsx";
 import Icon from "../ui/Icon.tsx";
 import Slider from "../ui/Slider.tsx";
@@ -251,15 +248,23 @@ function Buttons({ className }: ButtonsProps) {
 }
 
 function BannerCarousel(
-  { images, preload, interval, showPaginationArrows, showPaginationDots, activeBanner }:
-    Props,
+  {
+    images,
+    preload,
+    interval,
+    showPaginationArrows,
+    showPaginationDots,
+    activeBanner,
+  }: Props,
 ) {
   const id = useId();
 
   return (
     <div
       id={id}
-      class={`${activeBanner ? 'hidden' : ''} grid grid-cols-[48px_1fr_48px] sm:grid-cols-[120px_1fr_120px] grid-rows-[1fr_48px_1fr_64px]`}
+      class={`${
+        activeBanner ? "hidden" : ""
+      } grid grid-cols-[48px_1fr_48px] sm:grid-cols-[120px_1fr_120px] grid-rows-[1fr_48px_1fr_64px]`}
     >
       <Slider class="carousel carousel-center w-full col-span-full row-span-full scrollbar-none gap-6">
         {images?.map((image, index) => (

@@ -14,20 +14,20 @@ function Notify({ productID }: Props) {
 
   const handleSubmit = async (e: Event) => {
     e.preventDefault();
-  
+
     try {
       loading.value = true;
-  
+
       const form = e.currentTarget as HTMLFormElement;
       const name = (form.elements.namedItem("name") as HTMLInputElement)?.value;
-      const email = (form.elements.namedItem("email") as HTMLInputElement)?.value;
-  
+      const email = (form.elements.namedItem("email") as HTMLInputElement)
+        ?.value;
+
       await notifyme({ skuId: productID, name, email });
     } finally {
       loading.value = false;
     }
   };
-  
 
   return (
     <form

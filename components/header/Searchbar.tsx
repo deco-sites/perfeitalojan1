@@ -3,9 +3,7 @@ import { lazy, Suspense } from "preact/compat";
 import { useUI } from "../../sdk/useUI.ts";
 import type { Props as SearchbarProps } from "../search/Searchbar.tsx";
 
-const LazySearchbar = lazy(() =>
-  import("../search/Searchbar.tsx")
-);
+const LazySearchbar = lazy(() => import("../search/Searchbar.tsx"));
 
 interface Props {
   searchbar: SearchbarProps;

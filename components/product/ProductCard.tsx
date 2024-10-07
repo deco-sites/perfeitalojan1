@@ -1,4 +1,4 @@
-import {BUTTON_VARIANTS,ButtonVariant} from "../minicart/Cart.tsx";
+import { BUTTON_VARIANTS, ButtonVariant } from "../minicart/Cart.tsx";
 import Avatar from "../ui/Avatar.tsx";
 import AddToCartButton from "../../islands/AddToCartButton.tsx";
 import WishlistIcon from "../../islands/WishlistButton.tsx";
@@ -77,8 +77,10 @@ export const relative = (url: string) => {
 const WIDTH = 279;
 const HEIGHT = 270;
 
-function ProductCard({ product, preload, itemListName, layout, highlights }: Props) {
-  const {url,productID,name,image: images,offers,isVariantOf} = product;
+function ProductCard(
+  { product, preload, itemListName, layout, highlights }: Props,
+) {
+  const { url, productID, name, image: images, offers, isVariantOf } = product;
   const productGroupID = isVariantOf?.productGroupID;
   const [front, back] = images ?? [];
   const { listPrice, price, installment, seller } = useOffer(offers);
@@ -98,7 +100,10 @@ function ProductCard({ product, preload, itemListName, layout, highlights }: Pro
     },
   };
   const l = layout;
-  const align = !l?.basics?.contentAlignment || l?.basics?.contentAlignment == "Left" ? "left": "center";
+  const align =
+    !l?.basics?.contentAlignment || l?.basics?.contentAlignment == "Left"
+      ? "left"
+      : "center";
   const skuSelector = variants.map(([value, { urls }]) => (
     <li>
       <a href={urls[0]}>
@@ -168,7 +173,9 @@ function ProductCard({ product, preload, itemListName, layout, highlights }: Pro
   const price2: number = price as number;
   const listPrice2: number = listPrice as number;
 
-  const discount = listPrice && price && listPrice > price ? (listPrice - price) : undefined;
+  const discount = listPrice && price && listPrice > price
+    ? (listPrice - price)
+    : undefined;
 
   return (
     <div
@@ -179,7 +186,10 @@ function ProductCard({ product, preload, itemListName, layout, highlights }: Pro
       id={`product-card-${productID}`}
       {...sendEventOnClick(clickEvent)}
     >
-      <figure class="relative rounded-lg" style={{ aspectRatio: `${WIDTH} / ${HEIGHT}` }}>
+      <figure
+        class="relative rounded-lg"
+        style={{ aspectRatio: `${WIDTH} / ${HEIGHT}` }}
+      >
         {/* Wishlist button */}
         <div
           class={`absolute top-2 z-10
@@ -197,7 +207,11 @@ function ProductCard({ product, preload, itemListName, layout, highlights }: Pro
         >
           <WishlistIcon productGroupID={productGroupID} productID={productID} />
         </div>
-        <a href={url && relative(url)} aria-label="view product" class="contents relative">
+        <a
+          href={url && relative(url)}
+          aria-label="view product"
+          class="contents relative"
+        >
           {listPrice2 !== price2 && (
             <DiscountBadge
               price={price2}
@@ -289,12 +303,13 @@ function ProductCard({ product, preload, itemListName, layout, highlights }: Pro
             </div>
           )}
         {l?.hide.allPrices ? "" : (
-          <div class="flex flex-col mt-2">          
-            { discount &&  
-              <span class="text-[#b51313] font-bold my-1">
-                Econimize: {discount && formatPrice(discount)}
-              </span>
-            }
+          <div class="flex flex-col mt-2">
+            {discount &&
+              (
+                <span class="text-[#b51313] font-bold my-1">
+                  Econimize: {discount && formatPrice(discount)}
+                </span>
+              )}
             <div
               class={`flex items-center gap-2.5 ${
                 l?.basics?.oldPriceSize === "Normal" ? "lg:flex-row" : ""

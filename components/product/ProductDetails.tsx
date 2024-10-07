@@ -21,7 +21,7 @@ import AddToCartButton from "../product/AddToCartButton.tsx";
 import ProductButtonFloatingText from "../ui/ProductButtonFloatingText.tsx";
 import ProductDetailsImages from "../product/ProductDetailsImage.tsx";
 import { HighLight } from "../product/ProductHighlights.tsx";
-import  ModalImage  from "../../islands/ModalImage.tsx";
+import ModalImage from "../../islands/ModalImage.tsx";
 
 export type Variant = "front-back" | "slider" | "auto";
 
@@ -87,7 +87,7 @@ function ProductInfo(
   );
 
   let stock;
-  if( offers ){
+  if (offers) {
     stock = offers.offers[0].inventoryLevel.value;
   }
 
@@ -140,9 +140,13 @@ function ProductInfo(
         </div>
       </div>
       {/* Quantidade em estoque */}
-      <div class={`mt-3 ${stock && stock <= 10 ? 'text-orange-400' : 'text-current' }`}>
-        { stock && (`Quantidade em estoque: ${stock}`)}
-      </div>      
+      <div
+        class={`mt-3 ${
+          stock && stock <= 10 ? "text-orange-400" : "text-current"
+        }`}
+      >
+        {stock && (`Quantidade em estoque: ${stock}`)}
+      </div>
       {/* Prices */}
       <div class="mt-3">
         <div class="flex flex-row gap-2 items-center">
@@ -373,10 +377,12 @@ function Details({
             />
           </div>
 
-          {/* <div class="modal-image-mobile">
+          {
+            /* <div class="modal-image-mobile">
             <div class="close-modal" onClick={closeModalImage}></div>
             <img />
-          </div> */}
+          </div> */
+          }
           <ModalImage />
         </div>
         <SliderJS rootId={id}></SliderJS>

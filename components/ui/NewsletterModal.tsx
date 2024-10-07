@@ -1,8 +1,5 @@
 import { type SectionProps } from "@deco/deco";
-import {
-  BUTTON_VARIANTS,
-  ButtonVariant,
-} from "../minicart/Cart.tsx";
+import { BUTTON_VARIANTS, ButtonVariant } from "../minicart/Cart.tsx";
 import Icon from "../ui/Icon.tsx";
 import { Runtime } from "../../runtime.ts";
 import { useSignal } from "@preact/signals";

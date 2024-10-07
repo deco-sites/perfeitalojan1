@@ -51,7 +51,9 @@ interface InputNewsletterProps {
   required: boolean;
 }
 
-function InputNewsletter({ name, placeholder, required, type }: InputNewsletterProps) {
+function InputNewsletter(
+  { name, placeholder, required, type }: InputNewsletterProps,
+) {
   return (
     <input
       name={name}
@@ -77,13 +79,16 @@ function Form(props: Props) {
       // Fazer o type cast para HTMLFormElement
       const formElement = e.currentTarget as HTMLFormElement;
 
-      const email = (formElement.elements.namedItem("email") as HTMLInputElement)?.value;
+      const email =
+        (formElement.elements.namedItem("email") as HTMLInputElement)?.value;
 
       let name = "";
 
       // Verifique se o campo 'name' deve ser exibido e existe no formulário
       if (form.name.show) {
-        name = (formElement.elements.namedItem("name") as HTMLInputElement)?.value || "";
+        name =
+          (formElement.elements.namedItem("name") as HTMLInputElement)?.value ||
+          "";
       }
 
       if (email && name) {
@@ -123,31 +128,33 @@ function Form(props: Props) {
         dangerouslySetInnerHTML={{ __html: text }}
         class="text-base lg:text-xl text-left text-base-100 lg:max-w-sm max-w-xs lg:pr-0 pr-14"
       />
-      {success.value ? (
-        <div class="text-base lg:text-xl text-left text-base-100">
-          E-mail cadastrado com sucesso!
-        </div>
-      ) : (
-        <form class="w-full form-control" onSubmit={handleSubmit}>
-          <div class="flex gap-4 w-full lg:flex-row flex-col items-center lg:justify-between justify-center">
-            {nameInput}
-            {emailInput}
-            <button
-              style={{
-                minWidth: "150px",
-              }}
-              type="submit"
-              class={`capitalize md:ml-5 font-medium btn disabled:loading rounded-full join-item btn-${
-                BUTTON_VARIANTS[form?.button?.variant as string] ||
-                BUTTON_VARIANTS["primary"]
-              }`}
-              disabled={loading.value}
-            >
-              {form?.button?.label || "Cadastrar"}
-            </button>
+      {success.value
+        ? (
+          <div class="text-base lg:text-xl text-left text-base-100">
+            E-mail cadastrado com sucesso!
           </div>
-        </form>
-      )}
+        )
+        : (
+          <form class="w-full form-control" onSubmit={handleSubmit}>
+            <div class="flex gap-4 w-full lg:flex-row flex-col items-center lg:justify-between justify-center">
+              {nameInput}
+              {emailInput}
+              <button
+                style={{
+                  minWidth: "150px",
+                }}
+                type="submit"
+                class={`capitalize md:ml-5 font-medium btn disabled:loading rounded-full join-item btn-${
+                  BUTTON_VARIANTS[form?.button?.variant as string] ||
+                  BUTTON_VARIANTS["primary"]
+                }`}
+                disabled={loading.value}
+              >
+                {form?.button?.label || "Cadastrar"}
+              </button>
+            </div>
+          </form>
+        )}
     </div>
   );
 }

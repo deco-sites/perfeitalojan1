@@ -3,11 +3,7 @@ import { useCallback } from "preact/hooks";
 import Button from "../ui/Button.tsx";
 import { formatPrice } from "../../sdk/format.ts";
 import { useCart } from "apps/vtex/hooks/useCart.ts";
-import type {
-  SimulationOrderForm,
-  SKU,
-  Sla,
-} from "apps/vtex/utils/types.ts";
+import type { SimulationOrderForm, SKU, Sla } from "apps/vtex/utils/types.ts";
 
 export interface Props {
   items: Array<SKU>;

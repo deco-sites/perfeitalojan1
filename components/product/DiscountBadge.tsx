@@ -1,11 +1,11 @@
 import {
-  AlignHorizontal,
-  GRID_COL_START,
-  WidthElement,
-  AlignVertical,
   ALIGN_VERTICAL,
-  GRID_ROW_HORIZONTAL,
+  AlignHorizontal,
+  AlignVertical,
   ColumnStart,
+  GRID_COL_START,
+  GRID_ROW_HORIZONTAL,
+  WidthElement,
 } from "../product/ProductHighlights.tsx";
 
 type Props = {
@@ -15,7 +15,7 @@ type Props = {
   variant?: string;
   className?: string;
   columnStart?: ColumnStart;
-  alignVertical?:AlignVertical;
+  alignVertical?: AlignVertical;
   widthElement?: WidthElement;
   alignHorizontal?: AlignHorizontal;
 };
@@ -39,9 +39,11 @@ function DiscountBadge({
       ${className}
       ${alignVertical ? ALIGN_VERTICAL[alignVertical] : "row-start-auto"}
       ${columnStart ? GRID_COL_START[columnStart] : "col-start-auto"}
-      ${alignHorizontal ? GRID_ROW_HORIZONTAL[alignHorizontal] : "items-center"}     
+      ${
+        alignHorizontal ? GRID_ROW_HORIZONTAL[alignHorizontal] : "items-center"
+      }     
       `}
-      style={{width: widthElement}}      
+      style={{ width: widthElement }}
     >
       <div
         class={`absolute left-0 top-0 p-[10px] flex items-center z-10 ${className}`}

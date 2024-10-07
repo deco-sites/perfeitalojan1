@@ -11,7 +11,7 @@ function ProductButtonFloatingText({ product }: Props) {
 
   useEffect(() => {
     ScrollButtonFloating();
-  },[]);
+  }, []);
 
   return (
     <>
