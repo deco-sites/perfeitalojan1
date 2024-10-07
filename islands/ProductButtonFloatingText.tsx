@@ -1,1 +1,1 @@
-export { default } from "$store/components/ui/ProductButtonFloatingText.tsx";
+export { default } from "../components/ui/ProductButtonFloatingText.tsx";

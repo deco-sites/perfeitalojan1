@@ -1,4 +1,4 @@
-import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
+import type { Image as LiveImage } from "../../components/types.ts";
 
 export interface FooterSectionItem {
   image?: LiveImage;

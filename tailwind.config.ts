@@ -49,7 +49,7 @@ export default {
             "stroke-dashoffset": "162.6",
             "stroke-dasharray": "0 162.6 28 134.6",
           },
-        },        
+        },
       },
     },
     screens: {

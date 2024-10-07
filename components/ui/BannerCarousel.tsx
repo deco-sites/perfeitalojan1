@@ -1,13 +1,10 @@
-import {
-  BUTTON_VARIANTS,
-  ButtonVariant,
-} from "$store/components/minicart/Cart.tsx";
-import Button from "$store/components/ui/Button.tsx";
-import Icon from "$store/components/ui/Icon.tsx";
-import Slider from "$store/components/ui/Slider.tsx";
-import SliderJS from "$store/islands/SliderJS.tsx";
+import { BUTTON_VARIANTS, ButtonVariant } from "../minicart/Cart.tsx";
+import Button from "../ui/Button.tsx";
+import Icon from "../ui/Icon.tsx";
+import Slider from "../ui/Slider.tsx";
+import SliderJS from "../../islands/SliderJS.tsx";
 import { Picture, Source } from "apps/website/components/Picture.tsx";
-import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
+import type { Image as LiveImage } from "../../components/types.ts";
 import { useId } from "preact/hooks";
 
 export type BannerFontSizes = "Small" | "Medium" | "Large";
@@ -251,15 +248,23 @@ function Buttons({ className }: ButtonsProps) {
 }
 
 function BannerCarousel(
-  { images, preload, interval, showPaginationArrows, showPaginationDots, activeBanner }:
-    Props,
+  {
+    images,
+    preload,
+    interval,
+    showPaginationArrows,
+    showPaginationDots,
+    activeBanner,
+  }: Props,
 ) {
   const id = useId();
 
   return (
     <div
       id={id}
-      class={`${activeBanner ? 'hidden' : ''} grid grid-cols-[48px_1fr_48px] sm:grid-cols-[120px_1fr_120px] grid-rows-[1fr_48px_1fr_64px]`}
+      class={`${
+        activeBanner ? "hidden" : ""
+      } grid grid-cols-[48px_1fr_48px] sm:grid-cols-[120px_1fr_120px] grid-rows-[1fr_48px_1fr_64px]`}
     >
       <Slider class="carousel carousel-center w-full col-span-full row-span-full scrollbar-none gap-6">
         {images?.map((image, index) => (

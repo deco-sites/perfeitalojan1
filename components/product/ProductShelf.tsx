@@ -1,16 +1,16 @@
-import type { LoaderReturnType } from "$live/types.ts";
-import type { Layout as CardLayout } from "$store/components/product/ProductCard.tsx";
-import ProductCard from "$store/components/product/ProductCard.tsx";
+import { type LoaderReturnType } from "@deco/deco";
+import type { Layout as CardLayout } from "../product/ProductCard.tsx";
+import ProductCard from "../product/ProductCard.tsx";
 import {
   CONDITIONAL_RESPONSIVE_PARAMS,
   ResponsiveConditionals,
-} from "$store/components/ui/BannerCarousel.tsx";
-import Icon from "$store/components/ui/Icon.tsx";
-import Header from "$store/components/ui/SectionHeader.tsx";
-import Slider from "$store/components/ui/Slider.tsx";
-import SliderJS from "$store/islands/SliderJS.tsx";
-import { SendEventOnLoad } from "$store/sdk/analytics.tsx";
-import { useOffer } from "$store/sdk/useOffer.ts";
+} from "../ui/BannerCarousel.tsx";
+import Icon from "../ui/Icon.tsx";
+import Header from "../ui/SectionHeader.tsx";
+import Slider from "../ui/Slider.tsx";
+import SliderJS from "../../islands/SliderJS.tsx";
+import { SendEventOnLoad } from "../../sdk/analytics.tsx";
+import { useOffer } from "../../sdk/useOffer.ts";
 import type { Product } from "apps/commerce/types.ts";
 import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
 import { useId } from "preact/hooks";

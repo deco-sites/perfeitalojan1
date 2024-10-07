@@ -1,9 +1,9 @@
-import Slider from "$store/components/ui/Slider.tsx";
+import Slider from "../ui/Slider.tsx";
 import DiscountBadge from "./DiscountBadge.tsx";
 import Image from "apps/website/components/Image.tsx";
-import { useOffer } from "$store/sdk/useOffer.ts";
+import { useOffer } from "../../sdk/useOffer.ts";
 import type { ImageObject, Product } from "apps/commerce/types.ts";
-import OpenModalImage from "$store/components/ui/OpenModalImage.tsx";
+import OpenModalImage from "../ui/OpenModalImage.tsx";
 
 interface Props {
   images: ImageObject[];
@@ -58,7 +58,7 @@ function ProductDetailsImage({ images, product }: Props) {
                     height={HEIGHT}
                     // Preload LCP image for better web vitals
                     preload={index === 0}
-                    loading={index === 0 ? "eager" : "lazy"}        
+                    loading={index === 0 ? "eager" : "lazy"}
                   />
                 </figure>
               </Slider.Item>

@@ -1,10 +1,10 @@
-import Icon from "$store/components/ui/Icon.tsx";
+import Icon from "../../components/ui/Icon.tsx";
 import Image from "apps/website/components/Image.tsx";
-import Header from "$store/components/ui/SectionHeader.tsx";
-import Slider from "$store/components/ui/Slider.tsx";
-import SliderJS from "$store/islands/SliderJS.tsx";
+import Header from "../../components/ui/SectionHeader.tsx";
+import Slider from "../../components/ui/Slider.tsx";
+import SliderJS from "../../islands/SliderJS.tsx";
 import { useId } from "preact/hooks";
-import type { Image as ImageType } from "deco-sites/std/components/types.ts";
+import type { Image as ImageType } from "../../components/types.ts";
 
 export interface Testimonial {
   text?: string;

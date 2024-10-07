@@ -1,1 +1,1 @@
-export { default } from "$store/components/search/SearchResultsGridChoice.tsx";
+export { default } from "../components/search/SearchResultsGridChoice.tsx";

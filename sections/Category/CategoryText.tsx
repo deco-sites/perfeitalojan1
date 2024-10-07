@@ -1,1 +1,1 @@
-export { default, loader } from "$store/components/ui/CategoryText.tsx";
+export { default, loader } from "../../components/ui/CategoryText.tsx";

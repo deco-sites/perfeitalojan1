@@ -1,5 +1,5 @@
 import { Picture, Source } from "apps/website/components/Picture.tsx";
-import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
+import type { Image as LiveImage } from "../../components/types.ts";
 
 export interface Props {
   image: {

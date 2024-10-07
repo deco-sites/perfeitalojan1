@@ -1,5 +1,5 @@
 import { Product } from "apps/commerce/types.ts";
-import ScrollButtonFloating from "$store/components/ui/ScrollButtonFloating.tsx";
+import ScrollButtonFloating from "../ui/ScrollButtonFloating.tsx";
 import { useEffect } from "preact/compat";
 
 interface Props {
@@ -11,7 +11,7 @@ function ProductButtonFloatingText({ product }: Props) {
 
   useEffect(() => {
     ScrollButtonFloating();
-  },[]);
+  }, []);
 
   return (
     <>

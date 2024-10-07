@@ -1,8 +1,8 @@
-import Icon from "$store/components/ui/Icon.tsx";
+import Icon from "../ui/Icon.tsx";
 import { Picture, Source } from "apps/website/components/Picture.tsx";
-import { SocialItem } from "$store/components/footer/SocialNetWorks.tsx";
-import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
-import Button from "$store/components/ui/Button.tsx";
+import { SocialItem } from "../footer/SocialNetWorks.tsx";
+import type { Image as LiveImage } from "../../components/types.ts";
+import Button from "../ui/Button.tsx";
 
 export interface Props {
   serviceInfo?: {

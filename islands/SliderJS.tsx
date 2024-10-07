@@ -1,1 +1,1 @@
-export { default } from "$store/components/ui/SliderJS.tsx";
+export { default } from "../components/ui/SliderJS.tsx";

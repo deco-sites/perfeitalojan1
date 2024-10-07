@@ -1,5 +1,5 @@
-import Icon, { AvailableIcons } from "$store/components/ui/Icon.tsx";
-import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
+import Icon, { AvailableIcons } from "../ui/Icon.tsx";
+import type { Image as LiveImage } from "../../components/types.ts";
 import FooterSectionList, { FooterSectionItem } from "./Payments.tsx";
 import SocialNetWorks, { SocialItem } from "./SocialNetWorks.tsx";
 

@@ -1,15 +1,14 @@
-import Loading from "$store/components/ui/Loading.tsx";
-import Modal from "$store/components/ui/Modal.tsx";
-import { useUI } from "$store/sdk/useUI.ts";
+import Loading from "../ui/Loading.tsx";
+import Modal from "../ui/Modal.tsx";
+import { useUI } from "../../sdk/useUI.ts";
 import { lazy, Suspense } from "preact/compat";
 
-import type { Props as MenuProps } from "$store/components/header/Menu.tsx";
-import type { Props as SearchbarProps } from "$store/components/search/Searchbar.tsx";
+import type { Props as MenuProps } from "../header/Menu.tsx";
 
-import { ICartProps } from "$store/components/minicart/Cart.tsx";
+import { ICartProps } from "../minicart/Cart.tsx";
 
-const Menu = lazy(() => import("$store/components/header/Menu.tsx"));
-const Cart = lazy(() => import("$store/components/minicart/Cart.tsx"));
+const Menu = lazy(() => import("../header/Menu.tsx"));
+const Cart = lazy(() => import("../minicart/Cart.tsx"));
 
 interface Props {
   menu: MenuProps;

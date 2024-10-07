@@ -1,14 +1,8 @@
-import {
-  BUTTON_VARIANTS,
-  ButtonVariant,
-} from "$store/components/minicart/Cart.tsx";
-import { Runtime } from "$store/runtime.ts";
+import { BUTTON_VARIANTS, ButtonVariant } from "../minicart/Cart.tsx";
+import { Runtime } from "../../runtime.ts";
 import { useSignal } from "@preact/signals";
-import type { JSX } from "preact";
 
-const subscribe = Runtime.create(
-  "deco-sites/std/actions/vtex/newsletter/subscribe.ts",
-);
+const subscribe = Runtime.create("../../actions/vtex/newsletter/subscribe.ts");
 
 export interface INewsletterInputProps {
   /**
@@ -50,7 +44,7 @@ export interface Props {
   text: string;
 }
 
-interface InputNewletterProps {
+interface InputNewsletterProps {
   name: string;
   placeholder: string;
   type: string;
@@ -58,7 +52,7 @@ interface InputNewletterProps {
 }
 
 function InputNewsletter(
-  { name, placeholder, required, type }: InputNewletterProps,
+  { name, placeholder, required, type }: InputNewsletterProps,
 ) {
   return (
     <input
@@ -76,23 +70,30 @@ function Form(props: Props) {
   const loading = useSignal(false);
   const success = useSignal(false);
 
-  const handleSubmit: JSX.GenericEventHandler<HTMLFormElement> = async (e) => {
+  const handleSubmit = async (e: Event) => {
     e.preventDefault();
 
     try {
       loading.value = true;
 
+      // Fazer o type cast para HTMLFormElement
+      const formElement = e.currentTarget as HTMLFormElement;
+
       const email =
-        (e.currentTarget.elements.namedItem("email") as RadioNodeList)?.value;
+        (formElement.elements.namedItem("email") as HTMLInputElement)?.value;
 
       let name = "";
 
-      if (form?.name?.show) {
-        name = (e.currentTarget.elements.namedItem("name") as RadioNodeList)
-          ?.value;
+      // Verifique se o campo 'name' deve ser exibido e existe no formulário
+      if (form.name.show) {
+        name =
+          (formElement.elements.namedItem("name") as HTMLInputElement)?.value ||
+          "";
       }
 
-      if(email && name) await subscribe({ email, name });
+      if (email && name) {
+        await subscribe({ email, name });
+      }
     } finally {
       loading.value = false;
       success.value = true;
@@ -103,27 +104,23 @@ function Form(props: Props) {
     }
   };
 
-  const emailInput = !form?.email?.show
-    ? (
-      <InputNewsletter
-        name="email"
-        required
-        type="email"
-        placeholder={form?.email?.placeholder || "E-mail"}
-      />
-    )
-    : null;
+  const emailInput = form?.email?.show !== false && (
+    <InputNewsletter
+      name="email"
+      required
+      type="email"
+      placeholder={form?.email?.placeholder || "E-mail"}
+    />
+  );
 
-  const nameInput = !form?.name?.show
-    ? (
-      <InputNewsletter
-        name="name"
-        type="text"
-        placeholder={form?.name?.placeholder || "Nome"}
-        required
-      />
-    )
-    : null;
+  const nameInput = form?.name?.show !== false && (
+    <InputNewsletter
+      name="name"
+      type="text"
+      placeholder={form?.name?.placeholder || "Nome"}
+      required
+    />
+  );
 
   return (
     <div class="flex flex-col lg:flex-row items-baseline lg:items-center gap-5 lg:gap-16 py-10 w-full justify-between">
@@ -138,10 +135,7 @@ function Form(props: Props) {
           </div>
         )
         : (
-          <form
-            class="w-full form-control"
-            onSubmit={handleSubmit}
-          >
+          <form class="w-full form-control" onSubmit={handleSubmit}>
             <div class="flex gap-4 w-full lg:flex-row flex-col items-center lg:justify-between justify-center">
               {nameInput}
               {emailInput}
@@ -154,7 +148,7 @@ function Form(props: Props) {
                   BUTTON_VARIANTS[form?.button?.variant as string] ||
                   BUTTON_VARIANTS["primary"]
                 }`}
-                disabled={loading}
+                disabled={loading.value}
               >
                 {form?.button?.label || "Cadastrar"}
               </button>

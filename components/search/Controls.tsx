@@ -1,9 +1,9 @@
-import Filters from "$store/components/search/Filters.tsx";
-import Sort from "$store/components/search/Sort.tsx";
-import Breadcrumb from "$store/components/ui/Breadcrumb.tsx";
-import Button from "$store/components/ui/Button.tsx";
-import Icon from "$store/components/ui/Icon.tsx";
-import Modal from "$store/components/ui/Modal.tsx";
+import Filters from "../search/Filters.tsx";
+import Sort from "../search/Sort.tsx";
+import Breadcrumb from "../ui/Breadcrumb.tsx";
+import Button from "../ui/Button.tsx";
+import Icon from "../ui/Icon.tsx";
+import Modal from "../ui/Modal.tsx";
 import { useSignal } from "@preact/signals";
 import type { ProductListingPage } from "apps/commerce/types.ts";
 type Props =

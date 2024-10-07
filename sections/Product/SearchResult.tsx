@@ -1,1 +1,1 @@
-export { default } from "$store/components/search/SearchResult.tsx";
+export { default } from "../../components/search/SearchResult.tsx";

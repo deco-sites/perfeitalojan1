@@ -1,6 +1,6 @@
-export { default } from "$store/islands/NewsletterModal.tsx";
-import type { Props } from "$store/islands/NewsletterModal.tsx";
-export type { Props } from "$store/islands/NewsletterModal.tsx";
+export { default } from "../../islands/NewsletterModal.tsx";
+import type { Props } from "../../islands/NewsletterModal.tsx";
+export type { Props } from "../../islands/NewsletterModal.tsx";
 import { getCookies } from "std/http/mod.ts";
 
 export const loader = (props: Props, req: Request) => {

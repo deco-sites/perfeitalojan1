@@ -1,5 +1,5 @@
-import Markdown from "deco-sites/std/components/Markdown.tsx";
-import type { HTML } from "deco-sites/std/components/types.ts";
+import Markdown from "../../components/ui/Markdown.tsx";
+import type { HTML } from "../../components/types.ts";
 
 export interface Props {
   /**

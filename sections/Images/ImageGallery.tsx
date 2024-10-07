@@ -1,9 +1,8 @@
 import {
   DESKTOP_COLUMNS,
   MOBILE_COLUMNS,
-} from "$store/components/ui/BannerGrid.tsx";
-import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
-import Image from "apps/website/components/Image.tsx";
+} from "../../components/ui/BannerGrid.tsx";
+import type { Image as LiveImage } from "../../components/types.ts";
 import { Head } from "$fresh/runtime.ts";
 
 export interface ImageGalleryItem {

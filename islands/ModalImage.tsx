@@ -1,1 +1,1 @@
-export { default } from "$store/components/ui/ModalImage.tsx";
+export { default } from "../components/ui/ModalImage.tsx";
