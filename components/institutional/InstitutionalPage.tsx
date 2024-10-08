@@ -1,5 +1,5 @@
 import { Head } from "$fresh/runtime.ts";
-import { Section } from "$live/blocks/section.ts";
+import { type Section } from "@deco/deco/blocks";
 import { BlockInstance } from "deco/engine/block.ts";
 import type { Manifest } from "site/manifest.gen.ts";
 

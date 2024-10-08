@@ -1,5 +1,5 @@
 import { Picture, Source } from "apps/website/components/Picture.tsx";
-import type { SectionProps } from "$live/types.ts";
+import { type SectionProps } from "@deco/deco";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 import Image from "apps/website/components/Image.tsx";
 

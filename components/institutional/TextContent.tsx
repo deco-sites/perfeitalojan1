@@ -1,11 +1,11 @@
-import Markdown from "deco-sites/std/components/Markdown.tsx";
-import type { HTML } from "deco-sites/std/components/types.ts";
+import Markdown from "../../components/ui/Markdown.tsx";
+import type { HTMLWidget } from "apps/admin/widgets.ts";
 
 export interface Props {
   /**
    * @description Content will be rendered as markdown.
    */
-  content: HTML;
+  content: HTMLWidget;
 }
 
 function TextContent({ content }: Props) {
