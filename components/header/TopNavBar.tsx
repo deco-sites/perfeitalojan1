@@ -2,7 +2,7 @@ import Icon, { AvailableIcons } from "$store/components/ui/Icon.tsx";
 import Slider from "$store/components/ui/Slider.tsx";
 import SliderJS from "$store/islands/SliderJS.tsx";
 import Image from "apps/website/components/Image.tsx";
-import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
+import type { ImageWidget } from "apps/admin/widgets.ts";
 
 import { useId } from "preact/hooks";
 
@@ -25,7 +25,7 @@ export interface Alerts {
   textAlert: string;
   /** @format color */
   textColor: string;
-  image?: LiveImage;
+  image?: ImageWidget;
   alt?: string;
   /** @default */
   idIcon?: IconId;
