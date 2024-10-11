@@ -1,4 +1,4 @@
-import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
+import type { ImageWidget } from "apps/admin/widgets.ts";
 
 export interface Props {
   /** @description Title */
@@ -8,16 +8,16 @@ export interface Props {
   description: string;
 
   /** @description Image one */
-  imageOne: LiveImage;
+  imageOne: ImageWidget;
 
   /** @description Image two */
-  imageTwo: LiveImage;
+  imageTwo: ImageWidget;
 
   /** @description Image Three */
-  imageThree: LiveImage;
+  imageThree: ImageWidget;
 
   /** @description Image Four */
-  imageFour: LiveImage;
+  imageFour: ImageWidget;
 
   /** @description Image's alt text */
   alt: string;

@@ -1,9 +1,9 @@
-import type { Props } from "deco-sites/perfeitalojan1/components/ui/HeroSection.tsx";
-import Button from "deco-sites/perfeitalojan1/components/ui/Button.tsx";
-import Icon from "deco-sites/perfeitalojan1/components/ui/Icon.tsx";
+import type { Props } from "site/components/ui/HeroSection.tsx";
+import Button from "site/components/ui/Button.tsx";
+import Icon from "site/components/ui/Icon.tsx";
 import { useSignal } from "@preact/signals";
 import { useState } from "preact/hooks";
-import HeroSectionComponent from "deco-sites/perfeitalojan1/components/ui/HeroSection.tsx";
+import HeroSectionComponent from "site/components/ui/HeroSection.tsx";
 
 export interface SliderProps {
   /** @title Intervalo da transição do Slide (*) */

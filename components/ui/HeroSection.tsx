@@ -1,6 +1,6 @@
-import type { Video as LiveVideo } from "deco-sites/std/components/types.ts";
+import type { VideoWidget as LiveVideo } from "apps/admin/widgets.ts";
 import Video from "apps/website/components/Video.tsx";
-import type { HTML } from "deco-sites/std/components/types.ts";
+import type { HTMLWidget } from "apps/admin/widgets.ts";
 import useMedia from "../../sdk/useMedia.ts";
 
 export interface VideoProps {
@@ -15,7 +15,7 @@ export interface VideoProps {
 
 interface Title{
     /** @title Editor para texto */
-    richtext?: HTML;  
+    richtext?: HTMLWidget;  
     /** @title Tamanho da fonte - Mobile */
     /** @description (ex: 20px) */        
     sizeMobile?: string;
@@ -25,7 +25,7 @@ interface Subtitle{
     /** @title Mostrar o título? */    
     showSubtitle?: boolean;
     /** @title Editor para texto */    
-    richtext?: HTML;
+    richtext?: HTMLWidget;
     /** @title Tamanho da fonte - Mobile */    
     /** @description (ex: 20px) */    
     sizeMobile?: string;
