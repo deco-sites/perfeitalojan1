@@ -4,14 +4,15 @@ import {
   ButtonVariant,
 } from "$store/components/minicart/Cart.tsx";
 import Icon from "$store/components/ui/Icon.tsx";
-import { Runtime } from "$store/runtime.ts";
+// import { Runtime } from "$store/runtime.ts";
 import { useSignal } from "@preact/signals";
 import type { JSX } from "preact";
 import { useEffect, useRef } from "preact/compat";
 import { getCookies } from "std/http/mod.ts";
-const subscribe = Runtime.create(
-  "deco-sites/std/actions/vtex/newsletter/subscribe.ts",
-);
+
+// const subscribe = Runtime.create(
+//   "deco-sites/std/actions/vtex/newsletter/subscribe.ts",
+// );
 
 export interface INewsletterInputProps {
   /**
@@ -129,7 +130,22 @@ function NewsletterModal(
           ?.value;
       }
 
-      await subscribe({ email, name });
+      
+      const data = {
+        email,
+        name,
+      };
+
+      await fetch("/api/newsletter", {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+          "content-type": "application/json",
+          "accept": "application/json",
+        },
+      });
+
+
     } finally {
       loading.value = false;
       success.value = true;

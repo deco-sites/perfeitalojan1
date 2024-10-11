@@ -1,4 +1,4 @@
-import type { Video as LiveVideo } from "deco-sites/std/components/types.ts";
+import type { VideoWidget as LiveVideo } from "apps/admin/widgets.ts";
 import Video from "apps/website/components/Video.tsx";
 import type { HTMLWidget } from "apps/admin/widgets.ts";
 import useMedia from "../../sdk/useMedia.ts";
