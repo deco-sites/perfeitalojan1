@@ -2,7 +2,7 @@ import {
   DESKTOP_COLUMNS,
   MOBILE_COLUMNS,
 } from "$store/components/ui/BannerGrid.tsx";
-import type { ImageWidget } from "apps/admin/widgets.ts";
+import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 import Image from "apps/website/components/Image.tsx";
 import { Head } from "$fresh/runtime.ts";
 
@@ -11,7 +11,7 @@ export interface ImageGalleryItem {
   title?: string;
 
   /** @description Image url */
-  image: ImageWidget;
+  image: LiveImage;
 
   /** @description Alt text */
   alt: string;

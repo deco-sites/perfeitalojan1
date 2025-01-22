@@ -1,4 +1,4 @@
-import { type SectionProps } from "@deco/deco";
+import type { SectionProps } from "$live/mod.ts";
 import Icon from "$store/components/ui/Icon.tsx";
 
 export interface Props {

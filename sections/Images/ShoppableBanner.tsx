@@ -1,10 +1,10 @@
 import { Picture, Source } from "apps/website/components/Picture.tsx";
-import type { ImageWidget } from "apps/admin/widgets.ts";
+import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 
 export interface Props {
   image: {
-    mobile: ImageWidget;
-    desktop?: ImageWidget;
+    mobile: LiveImage;
+    desktop?: LiveImage;
     altText: string;
   };
 

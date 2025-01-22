@@ -1,1 +1,1 @@
-export { default } from "site/components/ui/HeroVideoCarroussel.tsx";
+export { default } from "deco-sites/perfeitalojan1/components/ui/HeroVideoCarroussel.tsx";

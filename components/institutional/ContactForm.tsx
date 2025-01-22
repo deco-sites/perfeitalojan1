@@ -1,7 +1,7 @@
 import Icon from "$store/components/ui/Icon.tsx";
 import { Picture, Source } from "apps/website/components/Picture.tsx";
 import { SocialItem } from "$store/components/footer/SocialNetWorks.tsx";
-import type { ImageWidget } from "apps/admin/widgets.ts";
+import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 import Button from "$store/components/ui/Button.tsx";
 
 export interface Props {
@@ -23,7 +23,7 @@ export interface Props {
   /**
    * @description Banner image that stays on top of the contact form
    */
-  image: ImageWidget;
+  image: LiveImage;
   /**
    * @description Alternative text description for the image
    */
