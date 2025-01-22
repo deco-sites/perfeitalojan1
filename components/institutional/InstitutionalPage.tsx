@@ -1,40 +1,15 @@
 import { Head } from "$fresh/runtime.ts";
-import { Section } from "$live/blocks/section.ts";
-import { BlockInstance } from "deco/engine/block.ts";
-import type { Manifest } from "deco-sites/perfeitalojan1/manifest.gen.ts";
-
+import type { Manifest } from "site/manifest.gen.ts";
+import { type Section } from "@deco/deco/blocks";
 export interface Props {
-  title: string;
-  asideMenu: Section;
-  content:
-    | BlockInstance<
-      "deco-sites/perfeitalojan1/sections/Institutional/TextContent.tsx",
-      Manifest
-    >
-    | BlockInstance<
-      "deco-sites/perfeitalojan1/sections/Institutional/AccordionsContent.tsx",
-      Manifest
-    >
-    | BlockInstance<
-      "deco-sites/perfeitalojan1/sections/Institutional/CardsContent.tsx",
-      Manifest
-    >
-    | BlockInstance<
-      "deco-sites/perfeitalojan1/sections/Institutional/ContactForm.tsx",
-      Manifest
-    >;
+    title: string;
+    asideMenu: Section;
+    content: BlockInstance<"site/sections/Institutional/TextContent.tsx", Manifest> | BlockInstance<"site/sections/Institutional/AccordionsContent.tsx", Manifest> | BlockInstance<"site/sections/Institutional/CardsContent.tsx", Manifest> | BlockInstance<"site/sections/Institutional/ContactForm.tsx", Manifest>;
 }
-
-function InstitutionalPage({
-  asideMenu: { Component: AsideComponent, props: asideProps },
-  content: { Component: ContentComponent, props: contentProps },
-  title,
-}: Props) {
-  return (
-    <>
+function InstitutionalPage({ asideMenu: { Component: AsideComponent, props: asideProps }, content: { Component: ContentComponent, props: contentProps }, title, }: Props) {
+    return (<>
       <Head>
-        <style
-          dangerouslySetInnerHTML={{
+        <style dangerouslySetInnerHTML={{
             __html: `
             .markdown-body h2 {
               font-size: 20px;
@@ -61,24 +36,21 @@ function InstitutionalPage({
               line-height: 20px;
             }
           `,
-          }}
-        />
+        }}/>
       </Head>
       <div>
         {/* Banner Institucional | Suporte */}
       </div>
       <div class="flex flex-col md:flex-row justify-between mt-[15px]">
-        <AsideComponent {...asideProps} />
+        <AsideComponent {...asideProps}/>
         <article class="md:pl-[30px] w-full">
           <h3 class="hidden text-secondary text-[28px] font-medium leading-[36.4px] mb-5 border-b border-neutral-100 pb-[10px] md:block">
             {title}
           </h3>
           {/* @ts-ignore opting for a ignore here so we can use a union type for the content section prop, and display it nicely in the admin panel */}
-          <ContentComponent {...contentProps} />
+          <ContentComponent {...contentProps}/>
         </article>
       </div>
-    </>
-  );
+    </>);
 }
-
 export default InstitutionalPage;

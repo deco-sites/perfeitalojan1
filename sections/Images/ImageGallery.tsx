@@ -2,7 +2,7 @@ import {
   DESKTOP_COLUMNS,
   MOBILE_COLUMNS,
 } from "$store/components/ui/BannerGrid.tsx";
-import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
+import type { ImageWidget as LiveImage } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
 import { Head } from "$fresh/runtime.ts";
 

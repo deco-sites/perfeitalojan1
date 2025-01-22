@@ -1,0 +1,19 @@
+{
+    "seo": {
+        "type": "website",
+        "titleTemplate": "%s | Deco.cx",
+        "descriptionTemplate": "%s | Deco.cx"
+    },
+    "global": [],
+    "routes": [
+        {
+            "__resolveType": "website/loaders/pages.ts"
+        }
+    ],
+    "commerce": {
+        "account": "agencian1",
+        "platform": "vtex",
+        "publicUrl": "agencian1.myvtex.com"
+    },
+    "__resolveType": "site/apps/site.ts"
+}
