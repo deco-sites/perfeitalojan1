@@ -1,6 +1,6 @@
 import { Picture, Source } from "apps/website/components/Picture.tsx";
-import type { SectionProps } from "$live/types.ts";
-import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
+import { type SectionProps } from "@deco/deco";
+import type { ImageWidget } from "apps/admin/widgets.ts";
 import Image from "apps/website/components/Image.tsx";
 
 /**
@@ -21,9 +21,9 @@ export interface Banner {
   };
   image: {
     /** @description Image for big screens */
-    desktop: LiveImage;
+    desktop: ImageWidget;
     /** @description Image for small screens */
-    mobile: LiveImage;
+    mobile: ImageWidget;
     /** @description image alt text */
     alt?: string;
   };

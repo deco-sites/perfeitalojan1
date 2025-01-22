@@ -1,5 +1,5 @@
 import Icon, { AvailableIcons } from "$store/components/ui/Icon.tsx";
-import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
+import type { ImageWidget } from "apps/admin/widgets.ts";
 import FooterSectionList, { FooterSectionItem } from "./Payments.tsx";
 import SocialNetWorks, { SocialItem } from "./SocialNetWorks.tsx";
 
@@ -47,11 +47,11 @@ function SectionItem({ item }: { item: Item }) {
 }
 
 export interface SecuritiesItem {
-  image: LiveImage;
+  image: ImageWidget;
 }
 
 export interface FooterImage {
-  image: LiveImage;
+  image: ImageWidget;
   alt: string;
   label: string;
 }

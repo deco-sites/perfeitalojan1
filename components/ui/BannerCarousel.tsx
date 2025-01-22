@@ -7,7 +7,7 @@ import Icon from "$store/components/ui/Icon.tsx";
 import Slider from "$store/components/ui/Slider.tsx";
 import SliderJS from "$store/islands/SliderJS.tsx";
 import { Picture, Source } from "apps/website/components/Picture.tsx";
-import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
+import type { ImageWidget } from "apps/admin/widgets.ts";
 import { useId } from "preact/hooks";
 
 export type BannerFontSizes = "Small" | "Medium" | "Large";
@@ -29,9 +29,9 @@ export const CONDITIONAL_RESPONSIVE_PARAMS: Record<
 
 export interface Banner {
   /** @description desktop otimized image */
-  desktop: LiveImage;
+  desktop: ImageWidget;
   /** @description mobile otimized image */
-  mobile: LiveImage;
+  mobile: ImageWidget;
   /** @description Image's alt text */
   alt: string;
   /**

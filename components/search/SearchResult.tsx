@@ -4,12 +4,12 @@ import { SendEventOnLoad } from "$store/sdk/analytics.tsx";
 import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
 import { useOffer } from "$store/sdk/useOffer.ts";
 import ProductGallery from "../product/ProductGallery.tsx";
-import type { LoaderReturnType } from "$live/types.ts";
+import { type LoaderReturnType } from "@deco/deco";
 import type { ProductListingPage } from "apps/commerce/types.ts";
 import Sort from "$store/islands/Sort.tsx";
 import Breadcrumb from "$store/components/ui/Breadcrumb.tsx";
 import SearchPagination from "$store/components/search/SearchPagination.tsx";
-import { Section } from "$live/blocks/section.ts";
+import { type Section } from "@deco/deco/blocks";
 import SearchResultsGridChoice from "$store/islands/SearchResultsGridChoice.tsx";
 
 import type { HighLight } from "$store/components/product/ProductHighlights.tsx";
