@@ -48,65 +48,65 @@ import * as $$$$$$$$$$$1 from "./apps/site.ts";
 
 const manifest = {
   "loaders": {
-    "deco-sites/perfeitalojan1/loaders/plp.ts": $$$0,
+    "site/loaders/plp.ts": $$$0,
   },
   "sections": {
-    "deco-sites/perfeitalojan1/sections/Category/CategoryBanner.tsx": $$$$$$0,
-    "deco-sites/perfeitalojan1/sections/Category/CategoryBreadcrumb.tsx":
+    "site/sections/Category/CategoryBanner.tsx": $$$$$$0,
+    "site/sections/Category/CategoryBreadcrumb.tsx":
       $$$$$$1,
-    "deco-sites/perfeitalojan1/sections/Category/CategoryList.tsx": $$$$$$2,
-    "deco-sites/perfeitalojan1/sections/Category/CategoryText.tsx": $$$$$$3,
-    "deco-sites/perfeitalojan1/sections/Container.tsx": $$$$$$4,
-    "deco-sites/perfeitalojan1/sections/Content/Benefits.tsx": $$$$$$5,
-    "deco-sites/perfeitalojan1/sections/Content/CopyRight.tsx": $$$$$$6,
-    "deco-sites/perfeitalojan1/sections/Content/Faq.tsx": $$$$$$7,
-    "deco-sites/perfeitalojan1/sections/Content/InfoCard.tsx": $$$$$$8,
-    "deco-sites/perfeitalojan1/sections/Content/Logos.tsx": $$$$$$9,
-    "deco-sites/perfeitalojan1/sections/Content/Testimonials.tsx": $$$$$$10,
-    "deco-sites/perfeitalojan1/sections/DesignSystem/DesignSystem.tsx":
+    "site/sections/Category/CategoryList.tsx": $$$$$$2,
+    "site/sections/Category/CategoryText.tsx": $$$$$$3,
+    "site/sections/Container.tsx": $$$$$$4,
+    "site/sections/Content/Benefits.tsx": $$$$$$5,
+    "site/sections/Content/CopyRight.tsx": $$$$$$6,
+    "site/sections/Content/Faq.tsx": $$$$$$7,
+    "site/sections/Content/InfoCard.tsx": $$$$$$8,
+    "site/sections/Content/Logos.tsx": $$$$$$9,
+    "site/sections/Content/Testimonials.tsx": $$$$$$10,
+    "site/sections/DesignSystem/DesignSystem.tsx":
       $$$$$$11,
-    "deco-sites/perfeitalojan1/sections/Footer/Footer.tsx": $$$$$$12,
-    "deco-sites/perfeitalojan1/sections/Header/HeaderLayout.tsx": $$$$$$13,
-    "deco-sites/perfeitalojan1/sections/Header/TopNavBar.tsx": $$$$$$14,
-    "deco-sites/perfeitalojan1/sections/HeroSection.tsx": $$$$$$15,
-    "deco-sites/perfeitalojan1/sections/HeroVideoCarroussel.tsx": $$$$$$16,
-    "deco-sites/perfeitalojan1/sections/Images/BannerGrid.tsx": $$$$$$17,
-    "deco-sites/perfeitalojan1/sections/Images/Carousel.tsx": $$$$$$18,
-    "deco-sites/perfeitalojan1/sections/Images/ImageGallery.tsx": $$$$$$19,
-    "deco-sites/perfeitalojan1/sections/Images/ShoppableBanner.tsx": $$$$$$20,
-    "deco-sites/perfeitalojan1/sections/Institutional/AccordionsContent.tsx":
+    "site/sections/Footer/Footer.tsx": $$$$$$12,
+    "site/sections/Header/HeaderLayout.tsx": $$$$$$13,
+    "site/sections/Header/TopNavBar.tsx": $$$$$$14,
+    "site/sections/HeroSection.tsx": $$$$$$15,
+    "site/sections/HeroVideoCarroussel.tsx": $$$$$$16,
+    "site/sections/Images/BannerGrid.tsx": $$$$$$17,
+    "site/sections/Images/Carousel.tsx": $$$$$$18,
+    "site/sections/Images/ImageGallery.tsx": $$$$$$19,
+    "site/sections/Images/ShoppableBanner.tsx": $$$$$$20,
+    "site/sections/Institutional/AccordionsContent.tsx":
       $$$$$$21,
-    "deco-sites/perfeitalojan1/sections/Institutional/AsideMenu.tsx": $$$$$$22,
-    "deco-sites/perfeitalojan1/sections/Institutional/CardsContent.tsx":
+    "site/sections/Institutional/AsideMenu.tsx": $$$$$$22,
+    "site/sections/Institutional/CardsContent.tsx":
       $$$$$$23,
-    "deco-sites/perfeitalojan1/sections/Institutional/ContactForm.tsx":
+    "site/sections/Institutional/ContactForm.tsx":
       $$$$$$24,
-    "deco-sites/perfeitalojan1/sections/Institutional/InstitutionalPage.tsx":
+    "site/sections/Institutional/InstitutionalPage.tsx":
       $$$$$$25,
-    "deco-sites/perfeitalojan1/sections/Institutional/TextContent.tsx":
+    "site/sections/Institutional/TextContent.tsx":
       $$$$$$26,
-    "deco-sites/perfeitalojan1/sections/Links/LinkTree.tsx": $$$$$$27,
-    "deco-sites/perfeitalojan1/sections/Links/Shortcuts.tsx": $$$$$$28,
-    "deco-sites/perfeitalojan1/sections/Miscellaneous/CampaignTimer.tsx":
+    "site/sections/Links/LinkTree.tsx": $$$$$$27,
+    "site/sections/Links/Shortcuts.tsx": $$$$$$28,
+    "site/sections/Miscellaneous/CampaignTimer.tsx":
       $$$$$$29,
-    "deco-sites/perfeitalojan1/sections/Miscellaneous/CookieConsent.tsx":
+    "site/sections/Miscellaneous/CookieConsent.tsx":
       $$$$$$30,
-    "deco-sites/perfeitalojan1/sections/Miscellaneous/NotFound.tsx": $$$$$$31,
-    "deco-sites/perfeitalojan1/sections/Newsletter/Newsletter.tsx": $$$$$$32,
-    "deco-sites/perfeitalojan1/sections/Newsletter/NewsletterModal.tsx":
+    "site/sections/Miscellaneous/NotFound.tsx": $$$$$$31,
+    "site/sections/Newsletter/Newsletter.tsx": $$$$$$32,
+    "site/sections/Newsletter/NewsletterModal.tsx":
       $$$$$$33,
-    "deco-sites/perfeitalojan1/sections/Product/ProductDetails.tsx": $$$$$$34,
-    "deco-sites/perfeitalojan1/sections/Product/ProductShelf.tsx": $$$$$$35,
-    "deco-sites/perfeitalojan1/sections/Product/SearchResult.tsx": $$$$$$36,
-    "deco-sites/perfeitalojan1/sections/Product/Wishlist.tsx": $$$$$$37,
-    "deco-sites/perfeitalojan1/sections/Social/InstagramPosts.tsx": $$$$$$38,
-    "deco-sites/perfeitalojan1/sections/Social/WhatsApp.tsx": $$$$$$39,
+    "site/sections/Product/ProductDetails.tsx": $$$$$$34,
+    "site/sections/Product/ProductShelf.tsx": $$$$$$35,
+    "site/sections/Product/SearchResult.tsx": $$$$$$36,
+    "site/sections/Product/Wishlist.tsx": $$$$$$37,
+    "site/sections/Social/InstagramPosts.tsx": $$$$$$38,
+    "site/sections/Social/WhatsApp.tsx": $$$$$$39,
   },
   "apps": {
-    "deco-sites/perfeitalojan1/apps/decohub.ts": $$$$$$$$$$$0,
-    "deco-sites/perfeitalojan1/apps/site.ts": $$$$$$$$$$$1,
+    "site/apps/decohub.ts": $$$$$$$$$$$0,
+    "site/apps/site.ts": $$$$$$$$$$$1,
   },
-  "name": "deco-sites/perfeitalojan1",
+  "name": "site",
   "baseUrl": import.meta.url,
 };
 
