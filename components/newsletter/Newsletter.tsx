@@ -7,7 +7,7 @@ import { useSignal } from "@preact/signals";
 import type { JSX } from "preact";
 
 const subscribe = Runtime.create(
-  "deco-sites/std/actions/vtex/newsletter/subscribe.ts",
+  "apps/vtex/actions/newsletter/subscribe.ts",
 );
 
 export interface INewsletterInputProps {

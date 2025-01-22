@@ -2,6 +2,8 @@
 // This file SHOULD be checked into source version control.
 // This file is automatically updated during development when running `dev.ts`.
 
+import * as $$$$$$$$$$$0 from "./apps/decohub.ts";
+import * as $$$$$$$$$$$1 from "./apps/site.ts";
 import * as $$$0 from "./loaders/plp.ts";
 import * as $$$$$$0 from "./sections/Category/CategoryBanner.tsx";
 import * as $$$$$$1 from "./sections/Category/CategoryBreadcrumb.tsx";
@@ -43,8 +45,6 @@ import * as $$$$$$36 from "./sections/Product/SearchResult.tsx";
 import * as $$$$$$37 from "./sections/Product/Wishlist.tsx";
 import * as $$$$$$38 from "./sections/Social/InstagramPosts.tsx";
 import * as $$$$$$39 from "./sections/Social/WhatsApp.tsx";
-import * as $$$$$$$$$$$0 from "./apps/decohub.ts";
-import * as $$$$$$$$$$$1 from "./apps/site.ts";
 
 const manifest = {
   "loaders": {
@@ -52,8 +52,7 @@ const manifest = {
   },
   "sections": {
     "site/sections/Category/CategoryBanner.tsx": $$$$$$0,
-    "site/sections/Category/CategoryBreadcrumb.tsx":
-      $$$$$$1,
+    "site/sections/Category/CategoryBreadcrumb.tsx": $$$$$$1,
     "site/sections/Category/CategoryList.tsx": $$$$$$2,
     "site/sections/Category/CategoryText.tsx": $$$$$$3,
     "site/sections/Container.tsx": $$$$$$4,
@@ -63,8 +62,7 @@ const manifest = {
     "site/sections/Content/InfoCard.tsx": $$$$$$8,
     "site/sections/Content/Logos.tsx": $$$$$$9,
     "site/sections/Content/Testimonials.tsx": $$$$$$10,
-    "site/sections/DesignSystem/DesignSystem.tsx":
-      $$$$$$11,
+    "site/sections/DesignSystem/DesignSystem.tsx": $$$$$$11,
     "site/sections/Footer/Footer.tsx": $$$$$$12,
     "site/sections/Header/HeaderLayout.tsx": $$$$$$13,
     "site/sections/Header/TopNavBar.tsx": $$$$$$14,
@@ -74,27 +72,19 @@ const manifest = {
     "site/sections/Images/Carousel.tsx": $$$$$$18,
     "site/sections/Images/ImageGallery.tsx": $$$$$$19,
     "site/sections/Images/ShoppableBanner.tsx": $$$$$$20,
-    "site/sections/Institutional/AccordionsContent.tsx":
-      $$$$$$21,
+    "site/sections/Institutional/AccordionsContent.tsx": $$$$$$21,
     "site/sections/Institutional/AsideMenu.tsx": $$$$$$22,
-    "site/sections/Institutional/CardsContent.tsx":
-      $$$$$$23,
-    "site/sections/Institutional/ContactForm.tsx":
-      $$$$$$24,
-    "site/sections/Institutional/InstitutionalPage.tsx":
-      $$$$$$25,
-    "site/sections/Institutional/TextContent.tsx":
-      $$$$$$26,
+    "site/sections/Institutional/CardsContent.tsx": $$$$$$23,
+    "site/sections/Institutional/ContactForm.tsx": $$$$$$24,
+    "site/sections/Institutional/InstitutionalPage.tsx": $$$$$$25,
+    "site/sections/Institutional/TextContent.tsx": $$$$$$26,
     "site/sections/Links/LinkTree.tsx": $$$$$$27,
     "site/sections/Links/Shortcuts.tsx": $$$$$$28,
-    "site/sections/Miscellaneous/CampaignTimer.tsx":
-      $$$$$$29,
-    "site/sections/Miscellaneous/CookieConsent.tsx":
-      $$$$$$30,
+    "site/sections/Miscellaneous/CampaignTimer.tsx": $$$$$$29,
+    "site/sections/Miscellaneous/CookieConsent.tsx": $$$$$$30,
     "site/sections/Miscellaneous/NotFound.tsx": $$$$$$31,
     "site/sections/Newsletter/Newsletter.tsx": $$$$$$32,
-    "site/sections/Newsletter/NewsletterModal.tsx":
-      $$$$$$33,
+    "site/sections/Newsletter/NewsletterModal.tsx": $$$$$$33,
     "site/sections/Product/ProductDetails.tsx": $$$$$$34,
     "site/sections/Product/ProductShelf.tsx": $$$$$$35,
     "site/sections/Product/SearchResult.tsx": $$$$$$36,

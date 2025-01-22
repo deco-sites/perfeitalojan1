@@ -1,5 +1,5 @@
-import Markdown from "deco-sites/std/components/Markdown.tsx";
-import type { HTML } from "deco-sites/std/components/types.ts";
+
+import type { HTMLWidget as HTML } from "apps/admin/widgets.ts";
 
 export interface Props {
   /**
@@ -11,7 +11,7 @@ export interface Props {
 function TextContent({ content }: Props) {
   return (
     <div class="mb-12 lg:mb-20">
-      <Markdown text={content.replace(/<p>|<\/p>/g, "\n")} />
+      {content.replace(/<p>|<\/p>/g, "\n")}
     </div>
   );
 }

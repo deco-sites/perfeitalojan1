@@ -3,8 +3,7 @@
 /// <reference lib="deno.ns" />
 /// <reference lib="esnext" />
 
-import plugins from "deco-sites/std/plugins/mod.ts";
-import partytownPlugin from "partytown/mod.ts";
+import { plugins } from "deco/plugins/deco.ts";
 
 import decoManifest from "./manifest.gen.ts";
 
@@ -17,6 +16,5 @@ export default defineConfig({
         manifest: decoManifest,
       },
     ),
-    partytownPlugin(),
   ],
 });

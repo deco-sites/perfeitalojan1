@@ -1,5 +1,4 @@
-import Markdown from "deco-sites/std/components/Markdown.tsx";
-import type { HTML } from "deco-sites/std/components/types.ts";
+import type { HTMLWidget as HTML } from "apps/admin/widgets.ts";
 
 export interface Props {
   /**
@@ -18,9 +17,7 @@ export function AccordionItem({ title, content }: Props) {
       </div>
       <div class="collapse-content px-0 !pb-0">
         <div class="pt-5">
-          <Markdown
-            text={content.replace(/<p>|<\/p>/g, "\n")}
-          />
+          {content.replace(/<p>|<\/p>/g, "\n")}
         </div>
       </div>
     </div>
