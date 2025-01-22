@@ -1,4 +1,5 @@
-{
+{ 
+  "lock": false,
   "imports": {
     "deco-sites/perfeitalojan1/": "./",
     "deco-sites/fashion/": "./",
@@ -15,7 +16,8 @@
     "std/": "https://deno.land/std@0.190.0/",
     "partytown/": "https://denopkg.com/deco-cx/partytown@0.4.8/",
     "daisyui": "npm:daisyui@3.0.3",
-    "apps/": "https://denopkg.com/deco-cx/apps@0.25.15/"
+    "apps/": "https://denopkg.com/deco-cx/apps@0.25.15/",
+    "site/": "./"
   },
   "tasks": {
     "start": "deno task bundle && deno run -A --unstable --watch=static/sw.js,tailwind.css,sections/,functions/,loaders/,actions/,workflows/,accounts/ dev.ts",
