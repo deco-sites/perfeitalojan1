@@ -1,6 +1,6 @@
 import type { AppContext } from "apps/vtex/mod.ts";
 import productListingPage, {Props as LoaderProps} from "apps/vtex/loaders/intelligentSearch/productListingPage.ts";
-import { type Section } from "@deco/deco/blocks";
+import { Section } from "$live/blocks/section.ts";
 
 export type Props = LoaderProps & {
   url?: string;

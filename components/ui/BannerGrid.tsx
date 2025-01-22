@@ -1,4 +1,4 @@
-import type { ImageWidget } from "apps/admin/widgets.ts";
+import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 import Icon from "$store/components/ui/Icon.tsx";
 
 export type SemanticColors =
@@ -30,8 +30,8 @@ export interface BagdeItem {
 }
 
 export interface Banner {
-  srcMobile: ImageWidget;
-  srcDesktop?: ImageWidget;
+  srcMobile: LiveImage;
+  srcDesktop?: LiveImage;
   alt: string;
   href: string;
   /**

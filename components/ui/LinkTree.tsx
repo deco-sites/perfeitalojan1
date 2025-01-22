@@ -1,4 +1,4 @@
-import type { ImageWidget } from "apps/admin/widgets.ts";
+import { Image as LiveImage } from "deco-sites/std/components/types.ts";
 import Image from "apps/website/components/Image.tsx";
 import Icon from "$store/components/ui/Icon.tsx";
 
@@ -16,8 +16,8 @@ export interface Props {
   title?: string;
   description?: string;
   links?: Link[];
-  bgImage?: ImageWidget;
-  avatar?: ImageWidget;
+  bgImage?: LiveImage;
+  avatar?: LiveImage;
   social?: Social[];
 }
 

@@ -1,5 +1,5 @@
 import { useId } from "preact/hooks";
-import { HTML } from "site/components/types.ts";
+import { HTML } from "deco-sites/std/components/types.ts";
 
 export interface Props {
   /**

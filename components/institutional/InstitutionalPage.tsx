@@ -1,26 +1,26 @@
 import { Head } from "$fresh/runtime.ts";
-import { type Section } from "@deco/deco/blocks";
+import { Section } from "$live/blocks/section.ts";
 import { BlockInstance } from "deco/engine/block.ts";
-import type { Manifest } from "site/manifest.gen.ts";
+import type { Manifest } from "deco-sites/perfeitalojan1/manifest.gen.ts";
 
 export interface Props {
   title: string;
   asideMenu: Section;
   content:
     | BlockInstance<
-      "site/sections/Institutional/TextContent.tsx",
+      "deco-sites/perfeitalojan1/sections/Institutional/TextContent.tsx",
       Manifest
     >
     | BlockInstance<
-      "site/sections/Institutional/AccordionsContent.tsx",
+      "deco-sites/perfeitalojan1/sections/Institutional/AccordionsContent.tsx",
       Manifest
     >
     | BlockInstance<
-      "site/sections/Institutional/CardsContent.tsx",
+      "deco-sites/perfeitalojan1/sections/Institutional/CardsContent.tsx",
       Manifest
     >
     | BlockInstance<
-      "site/sections/Institutional/ContactForm.tsx",
+      "deco-sites/perfeitalojan1/sections/Institutional/ContactForm.tsx",
       Manifest
     >;
 }

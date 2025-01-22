@@ -1,5 +1,5 @@
 import { useSignal } from "@preact/signals";
-// import { Runtime } from "$store/runtime.ts";
+import { Runtime } from "$store/runtime.ts";
 import type { Product } from "apps/commerce/types.ts";
 import type { JSX } from "preact";
 import Button from "$store/components/ui/Button.tsx";
@@ -8,7 +8,7 @@ interface Props {
   productID: Product["productID"];
 }
 
-// const notifyme = Runtime.create("deco-sites/std/actions/vtex/notifyme.ts");
+const notifyme = Runtime.create("deco-sites/std/actions/vtex/notifyme.ts");
 
 function Notify({ productID }: Props) {
   const loading = useSignal(false);
@@ -24,17 +24,7 @@ function Notify({ productID }: Props) {
       const email =
         (e.currentTarget.elements.namedItem("email") as RadioNodeList)?.value;
 
-        const data = { skuId: productID, name, email };
-  
-        await fetch("/api/notifyme", {
-          method: "POST",
-          body: JSON.stringify(data),
-          headers: {
-            "content-type": "application/json",
-            "accept": "application/json",
-          },
-        });
-      // await notifyme({ skuId: productID, name, email });
+      await notifyme({ skuId: productID, name, email });
     } finally {
       loading.value = false;
     }

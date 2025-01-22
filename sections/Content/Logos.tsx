@@ -1,10 +1,10 @@
 import Image from "apps/website/components/Image.tsx";
 import Header from "$store/components/ui/SectionHeader.tsx";
 import { useMemo } from "preact/hooks";
-import type { ImageWidget } from "apps/admin/widgets.ts";
+import type { Image as ImageType } from "deco-sites/std/components/types.ts";
 
 export interface Image {
-  image: ImageWidget;
+  image: ImageType;
   altText: string;
 }
 

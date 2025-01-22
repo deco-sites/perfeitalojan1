@@ -1,7 +1,7 @@
-import type { ImageWidget } from "apps/admin/widgets.ts";
+import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 
 export interface FooterSectionItem {
-  image?: ImageWidget;
+  image?: LiveImage;
   alt: string;
 }
 

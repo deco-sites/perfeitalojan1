@@ -1,6 +1,6 @@
 import Image from "apps/website/components/Image.tsx";
 import Slider from "$store/components/ui/Slider.tsx";
-import type { ImageWidget } from "apps/admin/widgets.ts";
+import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 import Icon from "$store/components/ui/Icon.tsx";
 import { useId } from "preact/hooks";
 import SliderJS from "$store/islands/SliderJS.tsx";
@@ -11,7 +11,7 @@ export interface Category {
   label: string;
   description?: string;
   href?: string;
-  image?: ImageWidget;
+  image?: LiveImage;
   buttonText?: string;
 }
 

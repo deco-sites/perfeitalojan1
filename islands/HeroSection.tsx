@@ -1,1 +1,1 @@
-export { default } from "site/components/ui/HeroSection.tsx";
+export { default } from "deco-sites/perfeitalojan1/components/ui/HeroSection.tsx";
